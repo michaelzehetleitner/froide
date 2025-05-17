@@ -379,11 +379,15 @@ class MakeRequestView(FormView):
             "publicbody_ids", self.request.GET.get("publicbody")
         )
         publicbody_slug = self.kwargs.get("publicbody_slug")
+        allowed = getattr(settings, "SELECTABLE_PUBLICBODY_SLUGS", None)
         publicbodies = []
         if publicbody_ids:
             publicbody_ids = publicbody_ids.split("+")
             try:
-                publicbodies = PublicBody.objects.filter(pk__in=publicbody_ids)
+                qs = PublicBody.objects.filter(pk__in=publicbody_ids)
+                if allowed:
+                    qs = qs.filter(slug__in=allowed)
+                publicbodies = list(qs)
             except ValueError:
                 raise Http404 from None
             if len(publicbody_ids) != len(publicbodies):
@@ -391,6 +395,8 @@ class MakeRequestView(FormView):
             if len(publicbody_ids) > 1 and not self.can_create_batch():
                 raise Http404
         elif publicbody_slug is not None:
+            if allowed and publicbody_slug not in allowed:
+                raise Http404
             publicbody = get_object_or_404(PublicBody, slug=publicbody_slug)
             if not publicbody.email:
                 raise Http404

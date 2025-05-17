@@ -113,6 +113,9 @@ class Base(Configuration):
 
     SITE_ID = values.IntegerValue(1)
 
+    # Allow selection of these public bodies only
+    SELECTABLE_PUBLICBODY_SLUGS = values.ListValue([])
+
     ADMINS = (
         # ('Your Name', 'your_email@example.com'),
     )
