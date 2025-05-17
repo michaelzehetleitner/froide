@@ -27,6 +27,7 @@ from froide.publicbody.serializers import PublicBodyListSerializer
 from froide.publicbody.widgets import get_widget_context
 
 from ..forms import RequestForm
+from ..forms.request import REQUEST_BODY_MAP, REQUEST_TYPE_CHOICES
 from ..models import FoiProject, FoiRequest, RequestDraft
 from ..services import CreateRequestService, SaveDraftService
 from ..utils import check_throttle
@@ -91,7 +92,7 @@ class MakeRequestView(FormView):
     def get_initial(self):
         request = self.request
         initial = {
-            "subject": request.GET.get("subject", ""),
+            "request_type": request.GET.get("request_type", ""),
             "body": request.GET.get("body", ""),
             "reference": request.GET.get("ref", ""),
             "tags": request.GET.get("tags", ""),
@@ -99,7 +100,9 @@ class MakeRequestView(FormView):
         }
         user_vars = self.get_user_template_vars()
         if user_vars:
-            initial["subject"] = replace_user_vars(initial["subject"], user_vars)
+            initial["request_type"] = replace_user_vars(
+                initial["request_type"], user_vars
+            )
             initial["body"] = replace_user_vars(initial["body"], user_vars)
 
         if "draft" in request.GET:
@@ -287,6 +290,8 @@ class MakeRequestView(FormView):
                 ],
             },
         }
+        ctx["request_type_choices"] = REQUEST_TYPE_CHOICES
+        ctx["request_body_map"] = REQUEST_BODY_MAP
         pb_ctx = get_widget_context()
         for key in pb_ctx:
             if key in ctx:

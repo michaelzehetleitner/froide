@@ -56,8 +56,8 @@ async def test_make_not_logged_in_request(page, live_server, public_body_with_in
     await expect(buttons).to_have_count(2)
     await page.locator(".search-results .search-result .btn >> nth=0").click()
 
-    req_title = "FoiRequest Number"
-    await page.fill("[name=subject]", req_title)
+    req_title = "Korrigierte Abiturprüfung"
+    await page.locator('select[name="request_type"]').select_option(req_title)
     await page.fill("[name=body]", "Documents describing something...")
     await page.fill("[name=first_name]", "Peter")
     await page.fill("[name=last_name]", "Parker")
@@ -101,8 +101,8 @@ async def test_make_not_logged_in_request_to_public_body(page, live_server, worl
 
     user_first_name = "Peter"
     user_last_name = "Parker"
-    req_title = "FoiRequest Number"
-    await page.fill("[name=subject]", req_title)
+    req_title = "Korrigierte Abiturprüfung"
+    await page.locator('select[name="request_type"]').select_option(req_title)
     await page.fill("[name=body]", "Documents describing something...")
     await page.fill("[name=first_name]", user_first_name)
     await page.fill("[name=last_name]", user_last_name)
@@ -140,9 +140,9 @@ async def test_make_logged_in_request(
     await expect(buttons).to_have_count(2)
     await page.locator(".search-results .search-result .btn >> nth=0").click()
 
-    req_title = "FoiRequest Number"
+    req_title = "Korrigierte Abiturprüfung"
     body_text = "Documents describing & something..."
-    await page.fill("[name=subject]", req_title)
+    await page.locator('select[name="request_type"]').select_option(req_title)
     await page.fill("[name=body]", body_text)
     await page.locator("#review-button").click()
     await page.locator("#send-request-button").click()
@@ -177,9 +177,9 @@ async def test_make_logged_in_request_too_many(
     await do_login(page, live_server)
     pb = PublicBody.objects.all().first()
     await go_to_make_request_url(page, live_server, pb=pb)
-    req_title = "FoiRequest Number"
+    req_title = "Korrigierte Abiturprüfung"
     body_text = "Documents describing & something..."
-    await page.fill("[name=subject]", req_title)
+    await page.locator('select[name="request_type"]').select_option(req_title)
     await page.fill("[name=body]", body_text)
     await page.locator("#review-button").click()
     await page.locator("#send-request-button").click()
@@ -195,11 +195,11 @@ async def test_make_request_logged_out_with_existing_account(page, live_server, 
     pb = PublicBody.objects.all().first()
     user = User.objects.get(username="dummy")
     await go_to_make_request_url(page, live_server, pb=pb)
-    req_title = "FoiRequest Number"
+    req_title = "Korrigierte Abiturprüfung"
     body_text = "Documents describing & something..."
     user_first_name = user.first_name
     user_last_name = user.last_name
-    await page.fill("[name=subject]", req_title)
+    await page.locator('select[name="request_type"]').select_option(req_title)
     await page.fill("[name=body]", body_text)
     await page.fill("[name=first_name]", user_first_name)
     await page.fill("[name=last_name]", user_last_name)
