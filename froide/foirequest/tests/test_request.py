@@ -28,7 +28,12 @@ from froide.foirequest.foi_mail import (
     generate_foirequest_files,
     package_foirequest,
 )
-from froide.foirequest.forms import get_escalation_message_form, get_send_message_form
+from froide.foirequest.forms import (
+    RequestForm,
+    get_escalation_message_form,
+    get_send_message_form,
+)
+from froide.foirequest.forms.request import REQUEST_BODY_MAP, REQUEST_TYPE_CHOICES
 from froide.foirequest.models import (
     DeliveryStatus,
     FoiAttachment,
@@ -36,6 +41,7 @@ from froide.foirequest.models import (
     FoiRequest,
 )
 from froide.foirequest.models.message import MessageKind
+from froide.foirequest.services import CreateRequestService
 from froide.foirequest.signals import email_left_queue
 from froide.foirequest.tests import factories
 from froide.foirequest.utils import possible_reply_addresses
@@ -2277,3 +2283,36 @@ def test_request_body_leading_indent(world, client, pb):
     assert len(mail.outbox) == 2
     message = mail.outbox[0]
     assert post["body"] in message.body
+
+
+@pytest.mark.django_db
+def test_create_request_service_uses_request_type_template(world, pb):
+    user = User.objects.get(username="sw")
+    request_type = REQUEST_TYPE_CHOICES[0][0]
+    data = {
+        "user": user,
+        "publicbodies": [pb],
+        "request_type": request_type,
+        "body": "This body should be ignored",  # overridden by template
+        "public": True,
+    }
+    service = CreateRequestService(data)
+    req = service.execute()
+    assert req.title == request_type
+    assert req.description == REQUEST_BODY_MAP[request_type]
+    message = req.foimessage_set.all()[0]
+    assert REQUEST_BODY_MAP[request_type] in message.plaintext
+
+
+@pytest.mark.django_db
+def test_request_form_invalid_request_type():
+    form = RequestForm(
+        {
+            "request_type": "Invalid Request",
+            "body": "Some body text",
+            "public": True,
+        }
+    )
+    assert not form.is_valid()
+    assert "request_type" in form.errors
+
