@@ -16,6 +16,7 @@ Freedom of Information Portal, but is internationalized, localized and themeable
    :maxdepth: 2
 
    about
+   architecture
    gettingstarted
    importpublicbodies
    configuration
