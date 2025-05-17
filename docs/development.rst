@@ -16,6 +16,17 @@ Then you can run the tests::
 
     make test
 
+For end-to-end UI tests, you need the Playwright browser installed::
+
+    playwright install --with-deps chromium
+
+Run the UI tests with::
+
+    make testui
+
+Make sure your database, Elasticsearch and RabbitMQ services are running
+when executing UI tests.
+
 This also does test coverage analysis. You can generate an HTML report with::
 
   coverage html --omit="*/migrations/*"

@@ -44,7 +44,7 @@ History
 
 Froide was designed to mimic the functionality of `What do they know <http://whatdotheyknow.com>`_ – a Freedom of Information portal in the UK written in Ruby on Rails 2.3. At the time when a German FoI portal was needed, the general FoI solution forked from WDTK called `Alaveteli <http://alaveteli.org>`_ was hard to install and not ready for reuse.
 That's why Froide was developed in spring 2011 as a fresh start, fully
-internationalized and configurable written in Django 1.3 to power `Frag den Staat <https://fragdenstaat.de>`_ which launched in August 2011.
+internationalized and configurable, written using Django 1.3 at the time, to power `Frag den Staat <https://fragdenstaat.de>`_ which launched in August 2011.
 
 Name
 ----
