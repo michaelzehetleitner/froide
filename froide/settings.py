@@ -572,7 +572,7 @@ class Base(Configuration):
         "doc_conversion_call_func": None,  # see settings_test for use
         "content_urls": {
             "terms": "/terms/",
-            "privary": "/privacy/",
+            "privacy": "/privacy/",
             "about": "/about/",
             "help": "/help/",
             "throttled": "/help/",
