@@ -135,7 +135,7 @@ class MakeRequestView(FormView):
         ctx = {
             "settings": {
                 "user_can_hide_web": settings.FROIDE_CONFIG.get("user_can_hide_web"),
-                "user_can_create_batch": self.can_create_batch(),
+                "user_can_create_batch": False,
                 "non_meaningful_subject_regex": settings.FROIDE_CONFIG.get(
                     "non_meaningful_subject_regex", []
                 ),
@@ -148,12 +148,8 @@ class MakeRequestView(FormView):
                 "listClassifications": reverse("api:classification-list"),
                 "listGeoregions": reverse("api:georegion-list"),
                 "listPublicBodies": reverse("api:publicbody-list"),
-                "listLaws": reverse("api:law-list"),
                 "search": reverse("foirequest-search"),
                 "user": reverse("api-user-profile"),
-                "makeRequestTo": reverse(
-                    "foirequest-make_request", kwargs={"publicbody_ids": "0"}
-                ),
                 "makeRequest": reverse("foirequest-make_request"),
             },
             "i18n": {
@@ -178,13 +174,7 @@ class MakeRequestView(FormView):
                 "close": _("close"),
                 "makeRequest": _("Make request"),
                 "writingRequestTo": _("You are writing a request to"),
-                "toMultiPublicBodies": _("To: {count} public bodies").format(
-                    count="${count}"
-                ),
-                "selectPublicBodies": _("Select public bodies"),
                 "continue": _("continue"),
-                "selectAll": [_("select one"), _("select all")],
-                "selectingAll": _("Selecting all public bodies, please wait..."),
                 "name": _("Name"),
                 "jurisdictionPlural": [
                     _("Jurisdiction"),
@@ -309,7 +299,7 @@ class MakeRequestView(FormView):
         return ctx
 
     def get_form_config_initial(self):
-        return {k: True for k in self.FORM_CONFIG_PARAMS if k in self.request.GET}
+        return {k: True for k in self.FORM_CONFIG_PARAMS}
 
     def get_form_kwargs(self):
         kwargs = super(MakeRequestView, self).get_form_kwargs()
@@ -370,9 +360,7 @@ class MakeRequestView(FormView):
         return pbs
 
     def has_prepared_publicbodies(self):
-        return (
-            not self.can_create_batch() and self.draft and self.draft.is_multi_request
-        )
+        return self.draft and self.draft.is_multi_request
 
     def get_publicbodies_from_context(self):
         publicbody_ids = self.kwargs.get(
@@ -381,14 +369,12 @@ class MakeRequestView(FormView):
         publicbody_slug = self.kwargs.get("publicbody_slug")
         publicbodies = []
         if publicbody_ids:
-            publicbody_ids = publicbody_ids.split("+")
+            publicbody_ids = publicbody_ids.split("+")[0:1]
             try:
                 publicbodies = PublicBody.objects.filter(pk__in=publicbody_ids)
             except ValueError:
                 raise Http404 from None
-            if len(publicbody_ids) != len(publicbodies):
-                raise Http404
-            if len(publicbody_ids) > 1 and not self.can_create_batch():
+            if len(publicbodies) != 1:
                 raise Http404
         elif publicbody_slug is not None:
             publicbody = get_object_or_404(PublicBody, slug=publicbody_slug)
@@ -398,14 +384,9 @@ class MakeRequestView(FormView):
         return publicbodies
 
     def can_create_batch(self):
-        user = self.request.user
-        if not user.is_authenticated:
-            return False
-        return user.is_superuser or user.has_perm("foirequest.create_batch")
+        return False
 
     def get_publicbody_form_class(self):
-        if self.can_create_batch():
-            return MultiplePublicBodyForm
         return PublicBodyForm
 
     def get_publicbody_form(self):
@@ -567,23 +548,7 @@ class MakeRequestView(FormView):
         return redirect(get_new_account_url(foi_object, email=email))
 
     def get_config(self, form):
-        config = {}
-        if self.request.method in ("POST", "PUT"):
-
-            def get_from_form(key):
-                return form.cleaned_data.get(key, False)
-
-            source_func = get_from_form
-        else:
-
-            def get_from_query(key):
-                return key in self.request.GET
-
-            source_func = get_from_query
-
-        for key in self.FORM_CONFIG_PARAMS:
-            config[key] = source_func(key)
-        return config
+        return {k: True for k in self.FORM_CONFIG_PARAMS}
 
     def get_context_data(self, **kwargs):
         if "request_form" not in kwargs:
@@ -612,12 +577,6 @@ class MakeRequestView(FormView):
         config = self.get_config(kwargs["request_form"])
 
         is_multi = False
-        if kwargs["publicbody_form"] and kwargs["publicbody_form"].is_multi:
-            is_multi = True
-        if publicbodies and len(publicbodies) > 1:
-            is_multi = True
-        if self.request.GET.get("single") is not None:
-            is_multi = False
 
         if self.request.method == "POST" or publicbodies or is_multi:
             campaigns = None
@@ -644,7 +603,7 @@ class DraftRequestView(MakeRequestView, DetailView):
         return get_read_queryset(RequestDraft.objects.all(), self.request)
 
     def get_config(self, form):
-        config = {}
+        config = {k: True for k in self.FORM_CONFIG_PARAMS}
         for key in self.FORM_CONFIG_PARAMS:
             if key in self.object.flags:
                 config[key] = self.object.flags[key]
