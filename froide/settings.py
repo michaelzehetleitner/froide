@@ -623,7 +623,7 @@ class Base(Configuration):
             "district",
             "admin_cooperation",
             "municipality",
-            "borought",
+            "borough",
         ],
         "non_meaningful_subject_regex": [
             r"^(foi[- ])?request$",
