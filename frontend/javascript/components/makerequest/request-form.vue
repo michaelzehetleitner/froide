@@ -89,16 +89,16 @@
         <div class="mb-3">
           <label
             class="form-check-label"
-            for="id_subject"
-            :class="{ 'text-danger': errors.subject }">
+            for="id_request_type"
+            :class="{ 'text-danger': errors.request_type }">
             {{ i18n.subject }}
           </label>
           <div
             v-if="
-              editingDisabled && !(errors.subject && errors.subject.length > 0)
+              editingDisabled && !(errors.request_type && errors.request_type.length > 0)
             ">
-            <input type="hidden" name="subject" :value="subject" />
-            <strong>{{ subject }}</strong>
+            <input type="hidden" name="request_type" :value="request_type" />
+            <strong>{{ request_type }}</strong>
             <button
               class="btn btn-sm btn-white float-end"
               @click.prevent="editingDisabled = false">
@@ -110,25 +110,28 @@
           </div>
           <template v-else>
             <div
-              v-if="errors.subject && errors.subject.length > 0"
+              v-if="errors.request_type && errors.request_type.length > 0"
               class="alert alert-danger">
-              <p v-for="error in errors.subject" :key="error.message">
+              <p v-for="error in errors.request_type" :key="error.message">
                 {{ error.message }}
               </p>
             </div>
             <div v-if="!isMeaningfulSubject" class="alert alert-warning">
               {{ i18n.enterMeaningfulSubject }}
             </div>
-            <input
-              id="id_subject"
-              v-model="subject"
-              type="text"
-              name="subject"
-              class="form-control"
-              minlength="4"
-              :class="{ 'is-invalid': errors.subject }"
-              :placeholder="formFields.subject.placeholder"
-              @keydown.enter.prevent />
+            <select
+              id="id_request_type"
+              v-model="request_type"
+              name="request_type"
+              class="form-select"
+              :class="{ 'is-invalid': errors.request_type }">
+              <option
+                v-for="choice in formFields.request_type.choices"
+                :key="choice.value"
+                :value="choice.value">
+                {{ choice.label }}
+              </option>
+            </select>
           </template>
         </div>
       </div>
@@ -446,7 +449,7 @@ export default {
       fullTextDisabled: false,
       editingDisabled: this.hideEditing,
       fullLetter: false,
-      subjectValue: this.initialSubject || '',
+      requestTypeValue: this.initialSubject || '',
       bodyValue: this.initialBody || '',
       fullTextValue: this.initialFullText,
       firstNameValue:
@@ -513,12 +516,12 @@ export default {
     hasUser() {
       return this.user && this.user.id
     },
-    subject: {
+    request_type: {
       get() {
-        return this.subjectValue
+        return this.requestTypeValue
       },
       set(value) {
-        this.subjectValue = value
+        this.requestTypeValue = value
         this.$emit('update:initialSubject', value)
       }
     },
@@ -604,7 +607,7 @@ export default {
     },
     isMeaningfulSubject() {
       for (const re of this.nonMeaningfulSubjects) {
-        if (re.test(this.subject)) {
+        if (re.test(this.request_type)) {
           return false
         }
       }
@@ -613,6 +616,12 @@ export default {
   },
   mounted() {
     this.bodyChanged()
+    this.populateBodyFromRequestType()
+  },
+  watch: {
+    request_type() {
+      this.populateBodyFromRequestType()
+    }
   },
   methods: {
     resetFullText() {
@@ -639,6 +648,14 @@ export default {
       } else {
         this.bodyCustomErrors = []
         ta.setCustomValidity('')
+      }
+    },
+    populateBodyFromRequestType() {
+      if (
+        this.config.request_body_map &&
+        this.config.request_body_map[this.request_type]
+      ) {
+        this.body = this.config.request_body_map[this.request_type]
       }
     },
     showFullLetter() {
