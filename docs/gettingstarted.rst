@@ -9,7 +9,7 @@ If you plan to setup a site based on Froide, you should not run Froide directly,
 Set up the development environment
 ----------------------------------
 
-Froide requires Python 3.5+. You should be using a Python 3 virtual environment or similar setup.
+Froide requires Python 3.12+. You should be using a Python 3 virtual environment or similar setup.
 Setup a virtual environment for development with `venv`like so::
 
     # Create virtualenv
@@ -30,7 +30,7 @@ Install the requirements inside the virtual env with `pip`::
 
 This installs the Python dependencies into the virtual environment.
 
-Froide requires one of Django's geospatial database backends. `<https://docs.djangoproject.com/en/1.11/ref/contrib/gis/install/#spatial-database>`_.
+Froide requires one of Django's geospatial database backends. `<https://docs.djangoproject.com/en/4.2/ref/contrib/gis/install/#spatial-database>`_.
 
 Froide is designed to run with the PostgreSQL database with PostGIS extension. You may be able to use a different Django-supported geospatial database, but it is not recommended. Elasticsearch is used as a search engine.
 
