@@ -8,7 +8,7 @@ This is an example of a production setup, your personal flavor may vary.
 - Supervisor as process manager and monitor
 - Gunicorn as WSGI Server
 - RabbitMQ as Background Queue Broker
-- Solr as Search Engine
+- Elasticsearch as Search Engine
 
 
 Protect admin site
