@@ -33,7 +33,7 @@ Also note that we forward the HTTPS protocol. This sh
 - Make the URL secret via the `SECRET_URLS` setting
 
 
-Acces to Documents
+Access to Documents
 ------------------
 
 Nginx is able to serve your uploads behind authentication/authorization. Activate the following settings::
