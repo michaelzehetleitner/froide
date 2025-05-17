@@ -30,6 +30,26 @@ Install the requirements inside the virtual env with `pip`::
 
 This installs the Python dependencies into the virtual environment.
 
+Frontend development
+--------------------
+
+The frontend requires `Node.js` 22 or higher. After installing Node.js,
+install the frontend dependencies with ``pnpm``::
+
+    pnpm install
+
+Run the development server with::
+
+    pnpm run dev
+
+To create a production build, use::
+
+    pnpm run build
+
+For UI tests the Playwright browser must be installed::
+
+    playwright install --with-deps chromium
+
 Froide requires one of Django's geospatial database backends. `<https://docs.djangoproject.com/en/1.11/ref/contrib/gis/install/#spatial-database>`_.
 
 Froide is designed to run with the PostgreSQL database with PostGIS extension. You may be able to use a different Django-supported geospatial database, but it is not recommended. Elasticsearch is used as a search engine.
