@@ -31,6 +31,12 @@ class PublicBodyForm(JSONMixin, forms.Form):
         label=_("Search for a topic or a public body:"),
     )
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        allowed = getattr(settings, "SELECTABLE_PUBLICBODY_SLUGS", None)
+        if allowed:
+            self.fields["publicbody"].queryset = PublicBody.objects.filter(slug__in=allowed)
+
     is_multi = False
 
     def as_data(self):
@@ -58,6 +64,19 @@ class MultiplePublicBodyForm(PublicBodyForm):
     )
 
     is_multi = True
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        allowed = getattr(settings, "SELECTABLE_PUBLICBODY_SLUGS", None)
+        if allowed:
+            self.fields["publicbody"].queryset = (
+                PublicBody.objects.filter(slug__in=allowed).prefetch_related(
+                    "classification",
+                    "jurisdiction",
+                    "categories",
+                    "laws",
+                )
+            )
 
     def get_publicbodies(self):
         if self.is_valid():

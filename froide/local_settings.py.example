@@ -16,6 +16,12 @@ class Dev(Base):
     # SITE_EMAIL = 'info@example.com'
     # SITE_URL = 'http://localhost:8000'
     # SITE_ID = 1
+    # Only allow these public bodies to be selectable
+    # SELECTABLE_PUBLICBODY_SLUGS = [
+    #     "kultusministerium",
+    #     "schule-1",
+    #     "schule-2",
+    # ]
 
     # ADMINS = (
     #     # ('Your Name', 'your_email@example.com'),
