@@ -46,7 +46,7 @@ def remove_law(apps, schema_editor):
 
 class Migration(migrations.Migration):
     dependencies = [
-        ("publicbody", "0050_alter_publicbody_email"),
+        ("publicbody", "0051_add_kultus_school_publicbodies"),
     ]
 
     operations = [
