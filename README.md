@@ -51,6 +51,9 @@ playwright install --with-deps chromium
 # build froide frontend
 pnpm run build
 
+# load provided public bodies and Art. 15 DSGVO law
+python manage.py migrate
+
 # or run the frontend devserver
 pnpm run dev
 ```
@@ -115,6 +118,17 @@ Make sure to have pre-commit hooks registered (`pre-commit install`). For VSCode
 ```
 make requirements
 ```
+
+### Sample data
+
+Running `python manage.py migrate` installs some example public bodies
+and the law **Art. 15 DSGVO**. This law has the ID `10001` and serves as
+the default law in the development settings. The request form offers
+three request types:
+
+- **Korrigierte Abiturprüfung**
+- **Korrigierte Probeunterricht mit Protokoll der Lehrerkonferenz**
+- **Notenübersicht des Schülers**
 
 ## Docs
 
