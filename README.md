@@ -29,7 +29,7 @@ Required system libraries:
 After clone, create a Python virtual environment and install dependencies:
 
 ```
-# create and activate virtual envornment
+# create and activate virtual environment
 uv venv
 source .venv/bin/activate
 
