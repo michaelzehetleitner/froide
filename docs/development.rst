@@ -68,3 +68,23 @@ Then change into the `docs` directory and type::
   make html
 
 The documentation will be build and you can find the resulting html in `docs/_build/html`.
+
+Frontend development
+--------------------
+
+The frontend requires `Node.js` 22 or higher. Install Node.js and then install
+the dependencies with ``pnpm``::
+
+    pnpm install
+
+Start the development server with::
+
+    pnpm run dev
+
+To build the production assets, run::
+
+    pnpm run build
+
+For UI tests you also need to install the Playwright browser::
+
+    playwright install --with-deps chromium
