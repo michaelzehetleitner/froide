@@ -21,7 +21,7 @@ from froide.georegion.models import GeoRegion
 from froide.helper.auth import get_read_queryset
 from froide.helper.utils import update_query_params
 from froide.proof.forms import ProofMessageForm
-from froide.publicbody.forms import MultiplePublicBodyForm, PublicBodyForm
+from froide.publicbody.forms import PublicBodyForm
 from froide.publicbody.models import PublicBody
 from froide.publicbody.serializers import PublicBodyListSerializer
 from froide.publicbody.widgets import get_widget_context
@@ -299,7 +299,7 @@ class MakeRequestView(FormView):
         return ctx
 
     def get_form_config_initial(self):
-        return {k: True for k in self.FORM_CONFIG_PARAMS}
+        return dict.fromkeys(self.FORM_CONFIG_PARAMS, True)
 
     def get_form_kwargs(self):
         kwargs = super(MakeRequestView, self).get_form_kwargs()
@@ -554,7 +554,7 @@ class MakeRequestView(FormView):
         return redirect(get_new_account_url(foi_object, email=email))
 
     def get_config(self, form):
-        return {k: True for k in self.FORM_CONFIG_PARAMS}
+        return dict.fromkeys(self.FORM_CONFIG_PARAMS, True)
 
     def get_context_data(self, **kwargs):
         if "request_form" not in kwargs:
@@ -609,7 +609,7 @@ class DraftRequestView(MakeRequestView, DetailView):
         return get_read_queryset(RequestDraft.objects.all(), self.request)
 
     def get_config(self, form):
-        config = {k: True for k in self.FORM_CONFIG_PARAMS}
+        config = dict.fromkeys(self.FORM_CONFIG_PARAMS, True)
         for key in self.FORM_CONFIG_PARAMS:
             if key in self.object.flags:
                 config[key] = self.object.flags[key]
