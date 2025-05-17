@@ -22,6 +22,7 @@ from froide.helper.text_utils import redact_plaintext, redact_subject
 from froide.problem.models import ProblemReport
 from froide.publicbody.models import PublicBody
 
+from .forms.request import REQUEST_BODY_MAP
 from .hooks import registry
 from .models import FoiAttachment, FoiMessage, FoiProject, FoiRequest, RequestDraft
 from .models.message import (
@@ -106,7 +107,7 @@ class CreateRequestService(BaseService):
 
         data = self.data
         additional_kwargs = {
-            "subject": data.get("subject", ""),
+            "subject": data.get("request_type", ""),
             "body": data.get("body", ""),
             "full_text": data.get("full_text", False),
             "public": data["public"],
@@ -136,10 +137,11 @@ class CreateRequestService(BaseService):
     def create_project(self):
         data = self.data
         user = data["user"]
+        body_text = REQUEST_BODY_MAP.get(data.get("request_type"), data.get("body", ""))
 
         project = FoiProject(
-            title=data["subject"],
-            description=data["body"],
+            title=data["request_type"],
+            description=body_text,
             status=FoiProject.STATUS_PENDING,
             public=data["public"],
             user=user,
@@ -176,16 +178,17 @@ class CreateRequestService(BaseService):
     ):
         data = self.data
         user = data["user"]
+        body_text = REQUEST_BODY_MAP.get(data.get("request_type"), data.get("body", ""))
         user_replacements = user.get_redactions()
 
         now = timezone.now()
         foirequest = FoiRequest(
-            title=data["subject"],
+            title=data["request_type"],
             public_body=publicbody,
             user=data["user"],
-            description=data["body"],
+            description=body_text,
             description_redacted=redact_plaintext(
-                data["body"], user_replacements=user_replacements
+                body_text, user_replacements=user_replacements
             ),
             public=data["public"],
             language=data.get("language", ""),
@@ -257,7 +260,7 @@ class CreateRequestService(BaseService):
         send_address = bool(self.data.get("address"))
         message.plaintext = construct_initial_message_body(
             foirequest,
-            text=data["body"],
+            text=body_text,
             foilaw=foilaw,
             full_text=data.get("full_text", False),
             send_address=send_address,
@@ -334,7 +337,7 @@ class SaveDraftService(BaseService):
         request_form = data["request_form"]
         draft = request_form.cleaned_data.get("draft", None)
         additional_kwargs = {
-            "subject": request_form.cleaned_data.get("subject", ""),
+            "subject": request_form.cleaned_data.get("request_type", ""),
             "body": request_form.cleaned_data.get("body", ""),
             "full_text": request_form.cleaned_data.get("full_text", False),
             "public": request_form.cleaned_data["public"],

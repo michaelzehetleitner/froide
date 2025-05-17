@@ -18,7 +18,11 @@ from froide.campaign.validators import validate_not_campaign
 from froide.helper.auth import get_read_queryset
 from froide.helper.form_utils import JSONMixin
 from froide.helper.forms import TagObjectForm
-from froide.helper.text_utils import apply_user_redaction, redact_plaintext, slugify
+from froide.helper.text_utils import (
+    apply_user_redaction,
+    redact_plaintext,
+    slugify,
+)
 from froide.helper.widgets import BootstrapRadioSelect, BootstrapSelect, PriceInput
 from froide.publicbody.models import PublicBody
 from froide.publicbody.widgets import PublicBodySelect
@@ -32,15 +36,40 @@ payment_possible = settings.FROIDE_CONFIG.get("payment_possible", False)
 
 MAX_BODY_LENGTH = 5000
 
+# Request type choices and default body templates
+REQUEST_TYPE_CHOICES = [
+    (
+        "Korrigierte Abiturprüfung",
+        _("Korrigierte Abiturprüfung"),
+    ),
+    (
+        "Korrigierte Probeunterricht mit Protokoll der Lehrerkonferenz",
+        _("Korrigierte Probeunterricht mit Protokoll der Lehrerkonferenz"),
+    ),
+    (
+        "Notenübersicht des Schülers",
+        _("Notenübersicht des Schülers"),
+    ),
+]
+
+REQUEST_BODY_MAP = {
+    "Korrigierte Abiturprüfung": _(
+        "Bitte senden Sie mir eine Kopie der korrigierten Abiturprüfung zu."
+    ),
+    "Korrigierte Probeunterricht mit Protokoll der Lehrerkonferenz": _(
+        "Bitte senden Sie mir die Unterlagen zum Probeunterricht inklusive des Protokolls der Lehrerkonferenz zu."
+    ),
+    "Notenübersicht des Schülers": _(
+        "Ich bitte um Zusendung der Notenübersicht des Schülers."
+    ),
+}
+
 
 class RequestForm(JSONMixin, forms.Form):
-    subject = forms.CharField(
-        label=_("Subject"),
-        min_length=8,
-        max_length=230,
-        widget=forms.TextInput(
-            attrs={"placeholder": _("Subject"), "class": "form-control"}
-        ),
+    request_type = forms.ChoiceField(
+        label=_("Request type"),
+        choices=REQUEST_TYPE_CHOICES,
+        widget=BootstrapSelect,
     )
     body = forms.CharField(
         label=_("Body"),
@@ -108,12 +137,12 @@ class RequestForm(JSONMixin, forms.Form):
         draft_qs = get_read_queryset(RequestDraft.objects.all(), self.request)
         self.fields["draft"].queryset = draft_qs
 
-    def clean_subject(self):
-        subject = self.cleaned_data["subject"]
-        slug = slugify(subject)
+    def clean_request_type(self):
+        request_type = self.cleaned_data["request_type"]
+        slug = slugify(request_type)
         if len(slug) < 4:
             raise forms.ValidationError(_("Subject is invalid."))
-        return subject
+        return request_type
 
     def clean_body(self):
         body = self.cleaned_data["body"]
