@@ -1,3 +1,8 @@
+ssh -i ~/.ssh/fds \
+    -L 8000:127.0.0.1:8000 \
+    -L 5173:127.0.0.1:5173 \
+    -N -T michael@xxx.xxx.xxx.xxx
+
 # Froide
 
 [![Froide CI](https://github.com/okfde/froide/workflows/Froide%20CI/badge.svg)](https://github.com/okfde/froide/actions?query=workflow%3A%22Froide+CI%22)
