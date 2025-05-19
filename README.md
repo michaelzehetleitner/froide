@@ -135,6 +135,17 @@ three request types:
 - **Korrigierte Probeunterricht mit Protokoll der Lehrerkonferenz**
 - **Notenübersicht des Schülers**
 
+### iTunes Library debugging
+
+You can inspect an iTunes `Library.xml` file for debugging with
+`tools/library_debug.py`. The script accepts one or more `--track-id` or
+`--persistent-id` arguments and prints JSON with track information and the
+playlists the tracks occur in:
+
+```bash
+python tools/library_debug.py ~/Music/Library.xml --track-id 15201
+```
+
 ## Docs
 
 [Read the documentation](http://froide.readthedocs.org/en/latest/) including a [Getting Started Guide](http://froide.readthedocs.org/en/latest/gettingstarted/).
