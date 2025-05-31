@@ -191,8 +191,7 @@ frozenlist==1.4.1
     #   aiosignal
 geoip2==4.8.0
     # via froide (pyproject.toml)
-gdal==3.9.0
-    # via froide (pyproject.toml)
+# gdal is optional
 html5lib==1.1
     # via weasyprint
 icalendar==5.0.13

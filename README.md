@@ -27,7 +27,7 @@ Required system tools:
 Required system libraries:
 
 - [Poppler](https://poppler.freedesktop.org)
-- [GDAL](https://gdal.org)
+- [GDAL](https://gdal.org) (optional)
 - cmake
 - pkg-config
 
