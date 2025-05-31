@@ -61,7 +61,7 @@ class FoiRequestFactory(DjangoModelFactory):
     due_date = timezone.now() + timedelta(days=14)
 
     secret_address = factory.LazyAttribute(
-        lambda o: "%s.%s@fragdenstaat.de"
+        lambda o: "%s.%s@fragdieschule.de"
         % (
             o.user.username,
             "".join([random.choice(string.hexdigits) for x in range(8)]),
@@ -105,7 +105,7 @@ class DeferredMessageFactory(DjangoModelFactory):
     class Meta:
         model = DeferredMessage
 
-    recipient = factory.Sequence(lambda n: "blub{}@fragdenstaat.de".format(n))
+    recipient = factory.Sequence(lambda n: "blub{}@fragdieschule.de".format(n))
     timestamp = timezone.now() - timedelta(hours=1)
     request = None
     mail = factory.LazyAttribute(
@@ -191,7 +191,7 @@ def make_world() -> Site:
     user1 = UserFactory.create(
         is_staff=True,
         username="sw",
-        email="info@fragdenstaat.de",
+        email="info@fragdieschule.de",
         first_name="Stefan",
         last_name="Wehrmeyer",
         address="DummyStreet23\n12345 Town",
@@ -200,7 +200,7 @@ def make_world() -> Site:
         is_staff=True,
         is_superuser=True,
         username="supersw",
-        email="superuser@fragdenstaat.de",
+        email="superuser@fragdieschule.de",
         first_name="Stefan",
         last_name="Wehrmeyer",
         address="DummyStreet23\n12345 Town",

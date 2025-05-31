@@ -68,7 +68,7 @@ die E-Mailadresse, an die Sie sich wenden können, lautet informationsfreiheitsg
 
 Eine inhaltliche Prüfung Ihrer Anfrage werden wir erst vornehmen, wenn Sie Ihre Identität mitteilen. Von einem Anfragenden kann erwartet werden, dass er/sie ein ernsthaftes Begehren vorbringt und zu seinem/ihrem Anliegen steht. Zudem kann ein Verwaltungsverfahren nicht aus dem Verborgenen heraus geführt werden.
 
-Sollten Sie kein Interesse an der Veröffentlichung Ihres Namens auf der Website von FragDenStaat haben, können Sie uns auch gern direkt eine E-Mail zukommen lassen.
+Sollten Sie kein Interesse an der Veröffentlichung Ihres Namens auf der Website von FragDieSchule haben, können Sie uns auch gern direkt eine E-Mail zukommen lassen.
 
 Vielen Dank für Ihr Verständnis.
 
@@ -80,7 +80,7 @@ die E-Mailadresse, an die Sie sich wenden können, lautet <<E-Mail-Adresse>>. Hi
 
 Eine inhaltliche Prüfung Ihrer Anfrage werden wir erst vornehmen, wenn Sie Ihre Identität mitteilen. Von einem Anfragenden kann erwartet werden, dass er/sie ein ernsthaftes Begehren vorbringt und zu seinem/ihrem Anliegen steht. Zudem kann ein Verwaltungsverfahren nicht aus dem Verborgenen heraus geführt werden.
 
-Sollten Sie kein Interesse an der Veröffentlichung Ihres Namens auf der Website von FragDenStaat haben, können Sie uns auch gern direkt eine E-Mail zukommen lassen.
+Sollten Sie kein Interesse an der Veröffentlichung Ihres Namens auf der Website von FragDieSchule haben, können Sie uns auch gern direkt eine E-Mail zukommen lassen.
 
 Vielen Dank für Ihr Verständnis.
 

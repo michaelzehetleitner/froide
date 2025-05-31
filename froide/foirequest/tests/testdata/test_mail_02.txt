@@ -1,11 +1,11 @@
 Return-path: <abcd@me.com>
-Envelope-to: s.wehrmeyer+axb4afh@fragdenstaat.de
+Envelope-to: s.wehrmeyer+axb4afh@fragdieschule.de
 Delivery-date: Fri, 15 Apr 2011 03:43:03 -0500
 Received: from asmtpout024.mac.com ([17.148.16.99])
 	by ki.site5.com with esmtp (Exim 4.69)
 	(envelope-from <abcd@me.com>)
 	id 1QAecI-0004Wm-SO
-	for s.wehrmeyer+axb4afh@fragdenstaat.de; Fri, 15 Apr 2011 03:43:03 -0500
+	for s.wehrmeyer+axb4afh@fragdieschule.de; Fri, 15 Apr 2011 03:43:03 -0500
 MIME-version: 1.0
 Content-type: multipart/alternative;
  boundary="Boundary_(ID_0fFy1l1rQBgP8BaMV+YMYw)"
@@ -13,7 +13,7 @@ Received: from [10.162.62.24]
  (tmo-108-40.customers.d1-online.com [80.187.108.40])
  by asmtp024.mac.com (Oracle Communications Messaging Exchange Server 7u4-18.01
  64bit (built Jul 15 2010)) with ESMTPSA id <0LJO00DTUQUHDC60@asmtp024.mac.com>
- for s.wehrmeyer+axb4afh@fragdenstaat.de; Fri, 15 Apr 2011 01:42:23 -0700 (PDT)
+ for s.wehrmeyer+axb4afh@fragdieschule.de; Fri, 15 Apr 2011 01:42:23 -0700 (PDT)
 X-Proofpoint-Virus-Version: vendor=fsecure
  engine=2.50.10432:5.2.15,1.0.148,0.0.0000
  definitions=2011-04-15_04:2011-04-15,2011-04-15,1970-01-01 signatures=0
@@ -27,7 +27,7 @@ From: Daniel Düsentrieb <abcd@me.com>
 X-Mailer: iPhone Mail (8G4)
 Message-id: <96847D55-B103-426E-B1D4-A91D16C79F81@me.com>
 Date: Fri, 15 Apr 2011 10:42:17 +0200
-To: Stefan Wehrmeyer <sw+yurpykc1hr@fragdenstaat.de>
+To: Stefan Wehrmeyer <sw+yurpykc1hr@fragdieschule.de>
 
 
 --Boundary_(ID_0fFy1l1rQBgP8BaMV+YMYw)

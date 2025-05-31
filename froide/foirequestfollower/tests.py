@@ -44,7 +44,7 @@ class FoiRequestFollowerTest(TestCase):
     def test_following(self):
         req = FoiRequest.objects.all()[0]
         user = User.objects.get(username="sw")
-        self.client.login(email="info@fragdenstaat.de", password="froide")
+        self.client.login(email="info@fragdieschule.de", password="froide")
         response = self.client.post(
             reverse("follow:follow", kwargs={"pk": req.pk, "conf_slug": CONF_SLUG})
         )
@@ -285,10 +285,10 @@ class FoiRequestFollowerTest(TestCase):
             self.client.post(reverse("comments-post-comment"), d)
 
         do_follow(req, "dummy@example.org")
-        do_comment(mes, "info@fragdenstaat.de")
+        do_comment(mes, "info@fragdieschule.de")
 
         do_follow(req2, "dummy@example.org")
-        do_comment(mes2, "info@fragdenstaat.de")
+        do_comment(mes2, "info@fragdieschule.de")
 
         end = timezone.now()
         start = end - timedelta(minutes=5)

@@ -1,12 +1,12 @@
 Return-Path: <EDV.Service@kreis-steinfurt.de>
-X-Original-To: a.rbeiter.1234556667@fragdenstaat.de
-Delivered-To: foimail@fragdenstaat.de
+X-Original-To: a.rbeiter.1234556667@fragdieschule.de
+Delivered-To: foimail@fragdieschule.de
 Received: from mail.kreis-steinfurt.de (mail.kreis-steinfurt.de [194.88.24.42])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by fragdenstaat.de (Postfix) with ESMTPS id AC6F82E0076
-	for <a.rbeiter.1234556667@fragdenstaat.de>; Wed, 30 May 2018 16:29:02 +0200 (CEST)
-To: a.rbeiter.1234556667@fragdenstaat.de
+	by fragdieschule.de (Postfix) with ESMTPS id AC6F82E0076
+	for <a.rbeiter.1234556667@fragdieschule.de>; Wed, 30 May 2018 16:29:02 +0200 (CEST)
+To: a.rbeiter.1234556667@fragdieschule.de
 ReplyTo: <EDV.Service-foobar@kreis-steinfurt.de>
 Sender: "Mail-Gateway Kreis Steinfurt" <EDV.Service@kreis-steinfurt.de>
 From: <peter.mueller@kreis-steinfurt.de>

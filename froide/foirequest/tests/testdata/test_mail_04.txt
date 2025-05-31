@@ -1,41 +1,41 @@
 Return-Path: <Peter.Punkt@MSW.NRW.DE>
-X-Original-To: sw+yurpykc1hr@fragdenstaat.de
-Delivered-To: foimail@fragdenstaat.de
+X-Original-To: sw+yurpykc1hr@fragdieschule.de
+Delivered-To: foimail@fragdieschule.de
 X-Comment: Failing authenticity
 Received-SPF: Fail (mailfrom) identity=mailfrom; client-ip=194.246.151.239; helo=c119-k30-rz.muenchen.de; envelope-from=prvs=062a39565=max.mustermann@muenchen.de; receiver=<UNKNOWN> 
 Authentication-Results: OpenDMARC; dmarc=fail (p=none dis=none) header.from=muenchen.de
-Authentication-Results: mail.fragdenstaat.de;
+Authentication-Results: mail.fragdieschule.de;
 	dkim=fail (2048-bit key; unprotected) header.d=muenchen.de header.i=@muenchen.de header.a=rsa-sha256 header.s=dkim2020 header.b=MpYjhRkg;
 	dkim-atps=neutral
 Received: from localhost (localhost [127.0.0.1])
-	by fragdenstaat.de (Postfix) with ESMTP id 8509495D273
-	for <sw+yurpykc1hr@fragdenstaat.de>; Thu, 10 Jan 2013 10:44:54 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at fragdenstaat.de
-Received: from fragdenstaat.de ([127.0.0.1])
-	by localhost (fragdenstaat.de [127.0.0.1]) (amavisd-new, port 10024)
-	with ESMTP id HfnflFZ5G2UY for <sw+yurpykc1hr@fragdenstaat.de>;
+	by fragdieschule.de (Postfix) with ESMTP id 8509495D273
+	for <sw+yurpykc1hr@fragdieschule.de>; Thu, 10 Jan 2013 10:44:54 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at fragdieschule.de
+Received: from fragdieschule.de ([127.0.0.1])
+	by localhost (fragdieschule.de [127.0.0.1]) (amavisd-new, port 10024)
+	with ESMTP id HfnflFZ5G2UY for <sw+yurpykc1hr@fragdieschule.de>;
 	Thu, 10 Jan 2013 10:44:07 +0100 (CET)
 Received: from relay4.it.nrw.de (relay4.it.nrw.de [93.184.136.151])
 	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
 	(No client certificate requested)
-	by fragdenstaat.de (Postfix) with ESMTPS id DB13A95D272
-	for <sw+yurpykc1hr@fragdenstaat.de>; Thu, 10 Jan 2013 10:44:00 +0100 (CET)
+	by fragdieschule.de (Postfix) with ESMTPS id DB13A95D272
+	for <sw+yurpykc1hr@fragdieschule.de>; Thu, 10 Jan 2013 10:44:00 +0100 (CET)
 Received: from gg43.gg.nrw.de (gw43.nrw.de [93.184.136.60])
 	by relay4.it.nrw.de  with ESMTP id r0A9hxxq031438
-	for <sw+yurpykc1hr@fragdenstaat.de>; Thu, 10 Jan 2013 10:43:59 +0100
+	for <sw+yurpykc1hr@fragdieschule.de>; Thu, 10 Jan 2013 10:43:59 +0100
 Received: from gg43.gg.nrw.de (localhost [127.0.0.1])
 	by gg43.gg.nrw.de (8.14.0/8.14.0) with ESMTP id r0A9hx4F012584
-	for <sw+yurpykc1hr@fragdenstaat.de>; Thu, 10 Jan 2013 10:43:59 +0100 (CET)
+	for <sw+yurpykc1hr@fragdieschule.de>; Thu, 10 Jan 2013 10:43:59 +0100 (CET)
 Received: from MAILHUB1.nrw.de (10.64.112.141) by gg43.gg.nrw.de (smtprelay) with ESMTP Thu Jan 10 10:43:46 2013.
 Received: from HELIOS.msw.nrw.de (MSWF-TEST-MAILER [10.64.128.34])
 	by MAILHUB1.nrw.de  with ESMTP id r0A9hjfJ002436
-	for <sw+yurpykc1hr@fragdenstaat.de>; Thu, 10 Jan 2013 10:43:45 +0100
+	for <sw+yurpykc1hr@fragdieschule.de>; Thu, 10 Jan 2013 10:43:45 +0100
 Received: from helios.msw.nrw.de ([fe80::c69:e3b5:b6b5:37ad]) by
  HELIOS.msw.nrw.de ([fe80::15b6:546:cc42:42a2%15]) with mapi id
  14.02.0318.004; Thu, 10 Jan 2013 10:43:46 +0100
 From: "Punkt, Peter" <Peter.Punkt@MSW.NRW.DE>
-To: "sw+yurpykc1hr@fragdenstaat.de"
-	<sw+yurpykc1hr@fragdenstaat.de>
+To: "sw+yurpykc1hr@fragdieschule.de"
+	<sw+yurpykc1hr@fragdieschule.de>
 Subject: =?iso-8859-1?Q?Kooperationen_des_Ministerium_f=FCr_Schule_und_Weiterbildu?=
  =?iso-8859-1?Q?ng_des_Landes_Nordrhein-Westfalen_mit_au=DFerschulischen_P?=
  =?iso-8859-1?Q?artnern?=

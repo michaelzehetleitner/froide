@@ -1,41 +1,41 @@
 Return-Path: <datenschutz.zr4@bundestag.de>
-X-Original-To: sw+yurpykc1hr@fragdenstaat.de
-Delivered-To: foimail@fragdenstaat.de
+X-Original-To: sw+yurpykc1hr@fragdieschule.de
+Delivered-To: foimail@fragdieschule.de
 Received: from localhost (localhost [127.0.0.1])
-  by fragdenstaat.de (Postfix) with ESMTP id 03FB095C088
-  for <sw+yurpykc1hr@fragdenstaat.de>; Tue,  9 Jul 2013 10:38:39 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at fragdenstaat.de
-Received: from fragdenstaat.de ([127.0.0.1])
-  by localhost (fragdenstaat.de [127.0.0.1]) (amavisd-new, port 10024)
-  with ESMTP id M8Ibp0a4PwSf for <sw+yurpykc1hr@fragdenstaat.de>;
+  by fragdieschule.de (Postfix) with ESMTP id 03FB095C088
+  for <sw+yurpykc1hr@fragdieschule.de>; Tue,  9 Jul 2013 10:38:39 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at fragdieschule.de
+Received: from fragdieschule.de ([127.0.0.1])
+  by localhost (fragdieschule.de [127.0.0.1]) (amavisd-new, port 10024)
+  with ESMTP id M8Ibp0a4PwSf for <sw+yurpykc1hr@fragdieschule.de>;
   Tue,  9 Jul 2013 10:38:33 +0200 (CEST)
 Received: from mail3.dbtg.de (mail3.dbtg.de [193.17.243.2])
-  by fragdenstaat.de (Postfix) with ESMTP id 0016195C080
-  for <sw+yurpykc1hr@fragdenstaat.de>; Tue,  9 Jul 2013 10:38:32 +0200 (CEST)
+  by fragdieschule.de (Postfix) with ESMTP id 0016195C080
+  for <sw+yurpykc1hr@fragdieschule.de>; Tue,  9 Jul 2013 10:38:32 +0200 (CEST)
 Received: from mailng03.bundestag.de (b.mx.intern.out [172.16.47.2])
   by mail3.dbtg.de (Postfix) with ESMTP id DAB4B7000FFD
-  for <sw+yurpykc1hr@fragdenstaat.de>; Tue,  9 Jul 2013 10:38:32 +0200 (CEST)
+  for <sw+yurpykc1hr@fragdieschule.de>; Tue,  9 Jul 2013 10:38:32 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
   by mailng03.bundestag.de (Postfix) with ESMTP id D595710A2F3
-  for <sw+yurpykc1hr@fragdenstaat.de>; Tue,  9 Jul 2013 10:38:32 +0200 (CEST)
+  for <sw+yurpykc1hr@fragdieschule.de>; Tue,  9 Jul 2013 10:38:32 +0200 (CEST)
 X-Virus-Scanned: by amavisd-new at bundestag.de
 Received: from mailng03.bundestag.de ([127.0.0.1])
   by localhost (mailng03.bundestag.btg [127.0.0.1]) (amavisd-new, port 10024)
-  with ESMTP id KMnjm4nSHKXm for <sw+yurpykc1hr@fragdenstaat.de>;
+  with ESMTP id KMnjm4nSHKXm for <sw+yurpykc1hr@fragdieschule.de>;
   Tue,  9 Jul 2013 10:38:32 +0200 (CEST)
 Received: from [172.27.225.14] (unknown [172.27.225.14])
   (using TLSv1 with cipher DHE-RSA-CAMELLIA256-SHA (256/256 bits))
   (No client certificate requested)
   (Authenticated sender: datenschutz.zr4)
   by mailng03.bundestag.de (Postfix) with ESMTPSA id 97B8210A2EF
-  for <sw+yurpykc1hr@fragdenstaat.de>; Tue,  9 Jul 2013 10:38:32 +0200 (CEST)
+  for <sw+yurpykc1hr@fragdieschule.de>; Tue,  9 Jul 2013 10:38:32 +0200 (CEST)
 Message-ID: <51DBCC07.4060300@bundestag.de>
 Date: Tue, 09 Jul 2013 10:38:31 +0200
 From: Datenschutz ZR 4 <datenschutz.zr4@bundestag.de>
 User-Agent: Mozilla/5.0 (Windows NT 5.1; rv:10.0.5) Gecko/20120605 Thunderbird/10.0.5
 MIME-Version: 1.0
 To: =?UTF-8?B?TW9yaXR6IE3DpGx6ZXI=?=
- <sw+yurpykc1hr@fragdenstaat.de>
+ <sw+yurpykc1hr@fragdieschule.de>
 Subject: =?iso-8859-1?Q?Anfrage_nach_dem_Informationsfreiheitsgesetz;
   _Gespr=E4ch_d?=
   =?iso-8859-1?Q?amaliger_BM_Steinmeier_Matthias_M=FCller_VW_AG;

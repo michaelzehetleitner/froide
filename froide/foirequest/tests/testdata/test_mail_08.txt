@@ -1,22 +1,22 @@
 Return-Path: <Erika.Mustermann@mi.brandenburg.de>
-X-Original-To: <fragdenstaat class="de"></fragdenstaat>
-Delivered-To: foimail@fragdenstaat.de
+X-Original-To: <fragdieschule class="de"></fragdieschule>
+Delivered-To: foimail@fragdieschule.de
 Received: from localhost (localhost [127.0.0.1])
-  by fragdenstaat.de (Postfix) with ESMTP id 3C7F295C08B
-  for <sw+yurpykc1hr@fragdenstaat.de>; Tue, 11 Feb 2014 09:46:10 +0100 (CET)
-X-Virus-Scanned: Debian amavisd-new at fragdenstaat.de
-Received: from fragdenstaat.de ([127.0.0.1])
-  by localhost (fragdenstaat.de [127.0.0.1]) (amavisd-new, port 10024)
-  with ESMTP id 6no121m8EgNn for <sw+yurpykc1hr@fragdenstaat.de>;
+  by fragdieschule.de (Postfix) with ESMTP id 3C7F295C08B
+  for <sw+yurpykc1hr@fragdieschule.de>; Tue, 11 Feb 2014 09:46:10 +0100 (CET)
+X-Virus-Scanned: Debian amavisd-new at fragdieschule.de
+Received: from fragdieschule.de ([127.0.0.1])
+  by localhost (fragdieschule.de [127.0.0.1]) (amavisd-new, port 10024)
+  with ESMTP id 6no121m8EgNn for <sw+yurpykc1hr@fragdieschule.de>;
   Tue, 11 Feb 2014 09:46:05 +0100 (CET)
 X-Greylist: delayed 528 seconds by postgrey-1.34 at adenauer; Tue, 11 Feb 2014 09:46:05 CET
 Received: from mailout.brandenburg.de (mailout.brandenburg.de [194.76.232.222])
-  by fragdenstaat.de (Postfix) with ESMTP id 3993C95C06C
-  for <sw+yurpykc1hr@fragdenstaat.de>; Tue, 11 Feb 2014 09:46:05 +0100 (CET)
+  by fragdieschule.de (Postfix) with ESMTP id 3993C95C06C
+  for <sw+yurpykc1hr@fragdieschule.de>; Tue, 11 Feb 2014 09:46:05 +0100 (CET)
 X-Virus-Scanned: by amavisd-new at lvnbb.de
 From: =?iso-8859-1?Q?Mustermann=2C_Erika?= <Erika.Mustermann@example.com>
-To: "'sw+yurpykc1hr@fragdenstaat.de'"
-  <sw+yurpykc1hr@fragdenstaat.de>
+To: "'sw+yurpykc1hr@fragdieschule.de'"
+  <sw+yurpykc1hr@fragdieschule.de>
 Subject: =?iso-8859-1?Q?Ihre_Antr=E4ge_auf_Akteneinsicht_vom_3.2.2014?=
 Thread-Topic: =?iso-8859-1?Q?Ihre_Antr=E4ge_auf_Akteneinsicht_vom_3.2.2014?=
 Thread-Index: Ac8nA8qjVLaBPayuRDGNq5mUucgHTQ==

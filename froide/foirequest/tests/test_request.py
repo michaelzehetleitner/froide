@@ -65,7 +65,7 @@ def assert_forbidden(response):
 
 @pytest.mark.django_db
 def test_public_body_logged_in_request(world, client, pb):
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     assert ok
 
     user = User.objects.get(username="sw")
@@ -96,7 +96,7 @@ def test_public_body_logged_in_request(world, client, pb):
         reverse("foirequest-make_public", kwargs={"slug": req.slug}), {}
     )
     assert_forbidden(response)
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(
         reverse("foirequest-make_public", kwargs={"slug": req.slug}), {}
     )
@@ -581,7 +581,7 @@ def test_logged_in_request_no_public_body(world, client, pb):
     )
     assert response.status_code == 400
     client.logout()
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     mail.outbox = []
     response = client.post(
         reverse("foirequest-suggest_public_body", kwargs={"slug": req.slug}),
@@ -645,7 +645,7 @@ def test_logged_in_request_no_public_body(world, client, pb):
 
 @pytest.mark.django_db
 def test_postal_reply(world, client, pb):
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     pb = PublicBody.objects.all()[0]
     post = {
         "subject": "Totally Random Request",
@@ -681,7 +681,7 @@ def test_postal_reply(world, client, pb):
         reverse("foirequest-add_postal_reply", kwargs={"slug": req.slug}), post
     )
     assert_forbidden(response)
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
 
     pb = req.public_body
     req.public_body = None
@@ -777,7 +777,7 @@ def test_postal_reply(world, client, pb):
     assert response.status_code == 403
 
     client.logout()
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     message = req.foimessage_set.all()[0]
 
     with open(factories.TEST_PDF_PATH, "rb") as f:
@@ -947,7 +947,7 @@ def test_set_message_sender(world, client, pb, msgobj):
     message = FoiMessage.objects.get(pk=message.pk)
     assert message.sender_public_body == alternate_pb
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(
         reverse(
             "foirequest-set_message_sender",
@@ -1039,7 +1039,7 @@ def test_escalation_message(world, client):
     )
     assert response.status_code == 403
     client.logout()
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(
         reverse("foirequest-escalation_message", kwargs={"slug": req.slug})
     )
@@ -1090,7 +1090,7 @@ def test_set_tags(world, client):
 
     # Bad form
     client.logout()
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(reverse("foirequest-set_tags", kwargs={"slug": req.slug}))
     assert response.status_code == 302
     assert len(req.tags.all()) == 0
@@ -1132,7 +1132,7 @@ def test_set_summary(world, client):
 
     # Request not final
     client.logout()
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     req.status = "awaiting_response"
     req.save()
     response = client.post(reverse("foirequest-set_summary", kwargs={"slug": req.slug}))
@@ -1199,7 +1199,7 @@ def test_approve_attachment(world, client):
     assert response.status_code == 403
     client.logout()
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(
         reverse(
             "foirequest-approve_attachment",
@@ -1212,7 +1212,7 @@ def test_approve_attachment(world, client):
     user.is_staff = False
     user.save()
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(
         reverse(
             "foirequest-approve_attachment",
@@ -1226,7 +1226,7 @@ def test_approve_attachment(world, client):
     att.approved = False
     att.can_approve = False
     att.save()
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(
         reverse(
             "foirequest-approve_attachment",
@@ -1303,7 +1303,7 @@ def test_delete_attachment(world, client):
     assert response.status_code == 403
     client.logout()
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(
         reverse(
             "foirequest-delete_attachment",
@@ -1316,7 +1316,7 @@ def test_delete_attachment(world, client):
     user.is_staff = False
     user.save()
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
 
     # Don't allow deleting from non-postal messages
     mes.kind = "email"
@@ -1364,7 +1364,7 @@ def test_delete_attachment(world, client):
         belongs_to=mes, approved=False, timestamp=now - DELETE_TIMEFRAME
     )
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(
         reverse(
             "foirequest-delete_attachment",
@@ -1424,7 +1424,7 @@ def test_make_same_request(world, client):
     assert FoiRequest.objects.filter(same_as=req, user=user).count() == 0
 
     # user made original request
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
 
     response = client.post(
         reverse("foirequest-make_same_request", kwargs={"slug": req.slug})
@@ -1457,7 +1457,7 @@ def test_make_same_request(world, client):
     same_req = FoiRequest.objects.get(same_as=req, user=user)
 
     client.logout()
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(
         reverse("foirequest-make_same_request", kwargs={"slug": same_req.slug})
     )
@@ -1512,7 +1512,7 @@ def test_empty_costs(world, client):
     req.user = user
     req.save()
     factories.FoiMessageFactory.create(status=None, request=req)
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     status = "awaiting_response"
     response = client.post(
         reverse("foirequest-set_status", kwargs={"slug": req.slug}),
@@ -1532,7 +1532,7 @@ def test_resolution(world, client):
     req.user = user
     req.save()
     mes = factories.FoiMessageFactory.create(status=None, request=req)
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     status = FoiRequest.STATUS.RESOLVED
     response = client.post(
         reverse("foirequest-set_status", kwargs={"slug": req.slug}),
@@ -1667,7 +1667,7 @@ def test_redaction_urls(world):
 
 @pytest.mark.django_db
 def test_empty_pb_email(world, client, pb):
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     pb = PublicBody.objects.all()[0]
     pb.email = ""
     pb.save()
@@ -1712,7 +1712,7 @@ def test_redact_attachment(world, client):
     response = client.get(url)
     assert_forbidden(response)
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.get(url)
     assert response.status_code == 404
 
@@ -1749,7 +1749,7 @@ def test_extend_deadline(world, client):
     response = client.post(url, post)
     assert response.status_code == 403
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(url, post)
     assert response.status_code == 400
 
@@ -1816,7 +1816,7 @@ def test_approve_message(world, client):
     response = client.post(url)
     assert response.status_code == 403
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(url)
     assert response.status_code == 302
 
@@ -1826,7 +1826,7 @@ def test_approve_message(world, client):
 
 @pytest.mark.django_db
 def test_too_long_subject(world, client, pb):
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     pb = PublicBody.objects.all()[0]
     post = {
         "subject": "Test" * 64,
@@ -2065,7 +2065,7 @@ def test_no_public_body(world, client):
         user=user, public_body=None, status="public_body_needed", site=world
     )
     req.save()
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.get(req.get_absolute_url())
     assertNotContains(response, "Mediation")
     response = client.post(
@@ -2083,7 +2083,7 @@ def pb(world):
 
 @pytest.mark.django_db
 def test_letter_public_body(world, client, pb):
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     post = {
         "subject": "Jurisdiction-Test-Subject",
         "body": "This is a test body",
@@ -2124,7 +2124,7 @@ def test_postal_after_last(world, client, pb, faker):
     """
 
     with time_machine.travel(datetime(2011, 1, 1, 15, 00, 00), tick=False):
-        client.login(email="info@fragdenstaat.de", password="froide")
+        client.login(email="info@fragdieschule.de", password="froide")
         pb = PublicBody.objects.all()[0]
         post = {
             "subject": "Totally Random Request",
@@ -2261,7 +2261,7 @@ def test_mail_confirmation_after_success(world, user, client, faker):
 
 @pytest.mark.django_db
 def test_request_body_leading_indent(world, client, pb):
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     assert ok
 
     user = User.objects.get(username="sw")
