@@ -7,6 +7,7 @@ from .models import Upload
 
 @celery_app.task(name="froide.upload.tasks.remove_expired_uploads")
 def remove_expired_uploads():
+    """Delete temporary uploads whose expiration timestamp has passed."""
     now = timezone.now()
     expired_uploads = Upload.objects.filter(expires__lt=now)
     for upload in expired_uploads:
