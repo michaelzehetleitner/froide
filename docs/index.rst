@@ -21,6 +21,7 @@ Freedom of Information Portal, but is internationalized, localized and themeable
    importpublicbodies
    configuration
    theming
+   wordpress
    api
    development
    upgrade

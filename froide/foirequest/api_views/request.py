@@ -1,5 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.db.models import Q
+from django.utils.translation import gettext as _
 
 from django_filters import rest_framework as filters
 from rest_framework import mixins, permissions, status, throttling, viewsets
@@ -20,7 +21,8 @@ from ..auth import (
 )
 from ..documents import FoiRequestDocument
 from ..filters import FoiRequestFilterSet
-from ..models import FoiRequest
+from ..forms import get_escalation_message_form
+from ..models import FoiMessage, FoiRequest
 from ..serializers import (
     FoiRequestDetailSerializer,
     FoiRequestListSerializer,
@@ -247,3 +249,27 @@ class FoiRequestViewSet(
 
     def perform_create(self, serializer):
         return serializer.save(user=self.request.user, request=self.request)
+
+    @action(detail=True, methods=["post"], url_path="escalate")
+    def escalate(self, request, pk=None):
+        foirequest = self.get_object()
+        if not foirequest.can_be_escalated():
+            return Response(
+                {"detail": _("Your request cannot be escalated.")},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+
+        form = get_escalation_message_form(request.data, foirequest=foirequest)
+        if foirequest.should_apply_throttle():
+            throttle_message = check_throttle(
+                request.user, FoiMessage, {"request": foirequest}
+            )
+            if throttle_message:
+                form.add_error(None, throttle_message)
+
+        if form.is_valid():
+            message = form.save(user=request.user)
+            data = {"status": "success", "url": message.get_absolute_domain_url()}
+            return Response(data, status=status.HTTP_201_CREATED)
+
+        return Response(form.errors, status=status.HTTP_400_BAD_REQUEST)

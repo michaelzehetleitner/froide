@@ -3034,6 +3034,50 @@ paths:
               schema:
                 $ref: '#/components/schemas/FoiRequestList'
           description: ''
+  /api/v1/request/{id}/escalate/:
+    post:
+      operationId: request_escalate_create
+      parameters:
+      - in: query
+        name: format
+        schema:
+          type: string
+          enum:
+          - csv
+          - json
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this Freedom of Information Request.
+        required: true
+      tags:
+      - request
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+          multipart/form-data:
+            schema:
+              type: object
+        required: true
+      security:
+      - oauth2:
+        - make:request
+      - cookieAuth: []
+      responses:
+        '201':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+        '400':
+          description: ''
   /api/v1/request/search/:
     get:
       operationId: request_search_retrieve
