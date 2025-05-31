@@ -23,6 +23,7 @@ Required system tools:
 - [uv](https://docs.astral.sh/uv/)
 - [pnpm](https://pnpm.io/)
 - [pre-commit](https://pre-commit.com)
+- PostgreSQL client ``psql`` (for ``python manage.py dbshell``)
 
 Required system libraries:
 
