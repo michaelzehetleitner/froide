@@ -778,7 +778,7 @@ class TestBase(Base):
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
     DEFAULT_FROM_EMAIL = "info@example.com"
 
-    FOI_EMAIL_DOMAIN = "fragdenstaat.de"
+    FOI_EMAIL_DOMAIN = "fragdieschule.de"
 
     CELERY_TASK_ALWAYS_EAGER = True
     CELERY_TASK_EAGER_PROPAGATES = True

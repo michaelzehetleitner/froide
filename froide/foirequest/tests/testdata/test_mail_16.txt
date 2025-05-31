@@ -1,13 +1,13 @@
 Return-Path: <prvs=3740992bb=buergermeister@duesseldorf.de>
-X-Original-To: info@fragdenstaat.de
-Delivered-To: info@fragdenstaat.de
+X-Original-To: info@fragdieschule.de
+Delivered-To: info@fragdieschule.de
 Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=193.27.22.88; helo=mailout.itk-rheinland.de; envelope-from=prvs=3740992bb=buergermeister@duesseldorf.de; receiver=<UNKNOWN> 
 Authentication-Results: OpenDMARC; dmarc=pass (p=none dis=none) header.from=duesseldorf.de
-Authentication-Results: mail.fragdenstaat.de;
+Authentication-Results: mail.fragdieschule.de;
 	dkim=pass (2048-bit key; unprotected) header.d=duesseldorf.de header.i=@duesseldorf.de header.a=rsa-sha256 header.s=s00001 header.b=C24dEkYW;
 	dkim-atps=neutral
 X-Mailer: IBM Notes
-To: info@fragdenstaat.de
+To: info@fragdieschule.de
 MIME-Version: 1.0
 Subject: WG: Einrichtung Bewohnerparken Zone "Lessingplatz" [#267938], Ihre Email
  vom 17.01.2023

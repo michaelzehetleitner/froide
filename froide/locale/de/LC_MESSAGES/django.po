@@ -18,7 +18,7 @@ msgstr ""
 "POT-Creation-Date: 2025-04-15 11:02+0200\n"
 "PO-Revision-Date: 2025-03-04 11:21+0100\n"
 "Last-Translator: Kara Engelhardt <kara.engelhardt@okfn.de>\n"
-"Language-Team: German <https://weblate.frag-den-staat.de/projects/froide/"
+"Language-Team: German <https://weblate.frag-die-schule.de/projects/froide/"
 "froide/de/>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -320,7 +320,7 @@ msgstr ""
 #: froide/account/forms.py
 msgid "You need to accept our Terms and Conditions and Priavcy Statement."
 msgstr ""
-"Sie müssen die Nutzungs- und Datenschutzbedingungen von FragDenStaat.de "
+"Sie müssen die Nutzungs- und Datenschutzbedingungen von FragDieSchule.de "
 "akzeptieren."
 
 #: froide/account/forms.py
@@ -332,7 +332,7 @@ msgid ""
 msgstr ""
 "Sie stimmen den <a href=\"{url_terms}\" "
 "target=\"_blank\">Nutzungsbedingungen</a> und <a href=\"{url_privacy}\" "
-"target=\"_blank\">Datenschutzbedingungen</a> von FragDenStaat.de zu."
+"target=\"_blank\">Datenschutzbedingungen</a> von FragDieSchule.de zu."
 
 #: froide/account/forms.py
 #: froide/foirequest/templates/foirequest/admin/decrypt_pdf.html
@@ -4921,7 +4921,7 @@ msgstr ""
 #: froide/foirequest/templates/foirequest/body/actions/send_message.html
 msgid "If you need to provide an alternative email address, use this one:"
 msgstr ""
-"Sollte eine Behörde nicht an FragDenStaat antworten wollen, sondern nur an "
+"Sollte eine Behörde nicht an FragDieSchule antworten wollen, sondern nur an "
 "eine private E-Mail-Adresse, geben Sie bitte diese an:"
 
 #: froide/foirequest/templates/foirequest/body/actions/send_message.html
@@ -5699,7 +5699,7 @@ msgstr ""
 "Hallo %(name)s,\n"
 "\n"
 "%(pbname)s hat auf Ihre Anfrage „%(title)s“ geantwortet. Bitte lesen Sie die "
-"Nachricht auf FragDenStaat.de und tragen ein, ob die Anfrage abgeschlossen "
+"Nachricht auf FragDieSchule.de und tragen ein, ob die Anfrage abgeschlossen "
 "ist. Sie können dort auch eine weitere Nachricht senden.\n"
 "\n"
 "Um die Antwort zu lesen und der Behörde zu antworten, klicken Sie auf diesen "
@@ -5808,10 +5808,10 @@ msgid ""
 "Legal Note: This mail was sent through a Freedom Of Information Portal. "
 "Replies might be published automatically.\n"
 msgstr ""
-"Rechtshinweis: Diese E-Mail wurde über den Webservice https://fragdenstaat."
+"Rechtshinweis: Diese E-Mail wurde über den Webservice https://fragdieschule."
 "de versendet. Antworten werden ggf. im Auftrag der Antragstellenden "
 "automatisch auf dem Internet-Portal veröffentlicht. Falls Sie noch Fragen "
-"haben, besuchen Sie https://fragdenstaat.de/hilfe/fuer-behoerden/\n"
+"haben, besuchen Sie https://fragdieschule.de/hilfe/fuer-behoerden/\n"
 
 #: froide/foirequest/templates/foirequest/emails/request_update.txt
 #: froide/follow/templates/follow/emails/batch_update_follower.txt
@@ -8917,7 +8917,7 @@ msgstr ""
 #: froide/guide/templates/guide/emails/new_guidance.txt
 msgid "You recently received replies to some of your requests."
 msgstr ""
-"Sie haben vor kurzem Antworten auf einige Ihrer Anfragen bei FragDenStaat.de "
+"Sie haben vor kurzem Antworten auf einige Ihrer Anfragen bei FragDieSchule.de "
 "erhalten."
 
 #: froide/guide/templates/guide/emails/new_guidance.txt
@@ -11131,7 +11131,7 @@ msgstr "Chinesisch (Traditionell, Honk Kong)"
 
 #: froide/settings.py
 msgid "Access to user status"
-msgstr "Kann Sie als Nutzer:in auf FragDenStaat.de identifizieren"
+msgstr "Kann Sie als Nutzer:in auf FragDieSchule.de identifizieren"
 
 #: froide/settings.py
 msgid "Read user profile information"
@@ -11456,7 +11456,7 @@ msgid ""
 "Support Froide by <a href=\"https://okfn.de/spenden/\">donating to Open "
 "Knowledge Foundation Germany</a>"
 msgstr ""
-"Wir kämpfen für Transparenz! <a href=\"https://fragdenstaat.de/hilfe/spenden/"
+"Wir kämpfen für Transparenz! <a href=\"https://fragdieschule.de/hilfe/spenden/"
 "\">Kämpfen Sie mit und unterstützen Sie uns.</a>"
 
 #: froide/templates/emails/footer.txt
@@ -11465,7 +11465,7 @@ msgid ""
 "https://okfn.de/spenden/\n"
 msgstr ""
 "Wir kämpfen für Transparenz! Kämpfen Sie mit und unterstützen Sie uns:\n"
-"https://fragdenstaat.de/hilfe/spenden/\n"
+"https://fragdieschule.de/hilfe/spenden/\n"
 
 #: froide/templates/error_base.html
 msgid "You can try searching or go back to the <a href=\"/\">Home page</a>."
@@ -12364,8 +12364,8 @@ msgstr "zustaendigkeit/<slug:slug>/"
 #~ msgid "Signatures"
 #~ msgstr "Unterschriften"
 
-#~ msgid "E-mail addresses that end in @fragdenstaat.de"
-#~ msgstr "E-Mail-Adressen, die auf ‘@fragdenstaat.de’ enden"
+#~ msgid "E-mail addresses that end in @fragdieschule.de"
+#~ msgstr "E-Mail-Adressen, die auf ‘@fragdieschule.de’ enden"
 
 #~ msgid ""
 #~ "Go to each page of the PDF and locate the parts that need to be blacked "
@@ -12633,14 +12633,14 @@ msgstr "zustaendigkeit/<slug:slug>/"
 #~ "Froide is a free and Open Source Project by <a href=\"http://www.okfn."
 #~ "org\">the Open Knowledge Foundation</a>."
 #~ msgstr ""
-#~ "Wir kämpfen für Transparenz! <a href=\"https://fragdenstaat.de/hilfe/"
+#~ "Wir kämpfen für Transparenz! <a href=\"https://fragdieschule.de/hilfe/"
 #~ "spenden/\">Kämpfen Sie mit und unterstützen Sie uns.</a>"
 
 #~ msgid ""
 #~ "Froide is a free and Open Source Project by &lt;a href=&quot;http://www."
 #~ "okfn.org&quot;&gt;the Open Knowledge Foundation&lt;/a&gt;."
 #~ msgstr ""
-#~ "Wir kämpfen für Transparenz! <a href=\"https://fragdenstaat.de/spenden/"
+#~ "Wir kämpfen für Transparenz! <a href=\"https://fragdieschule.de/spenden/"
 #~ "\">Kämpfen Sie mit und unterstützen Sie uns.</a>"
 
 #~ msgid "Possible Spam Mail received"
@@ -12855,7 +12855,7 @@ msgstr "zustaendigkeit/<slug:slug>/"
 #~ "Please note that you shouldn't use this site to request personal "
 #~ "information."
 #~ msgstr ""
-#~ "Bitte beachten Sie, dass FragDenStaat.de nicht für Anfragen nach "
+#~ "Bitte beachten Sie, dass FragDieSchule.de nicht für Anfragen nach "
 #~ "persönlichen Informationen geeignet ist."
 
 #~ msgid "A request about an opinion"
@@ -14406,7 +14406,7 @@ msgstr "zustaendigkeit/<slug:slug>/"
 #~ "black out all private information concerning you</strong>."
 #~ msgstr ""
 #~ "Hochgeladene Scans können im PDF-, JPG- oder PNG-Format sein. Sie können "
-#~ "die Datei auch nach dem Hochladen in FragDenStaat schwärzen und "
+#~ "die Datei auch nach dem Hochladen in FragDieSchule schwärzen und "
 #~ "anschließend freischalten. <strong>Bitte entfernen oder schwärzen Sie "
 #~ "alle Stellen mit Ihren persönlichen Informationen (z.B. Ihre Adresse).</"
 #~ "strong>"

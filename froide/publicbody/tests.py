@@ -188,7 +188,7 @@ Public Body X 76,pb-76@76.example.com,bund,,,http://example.com,,Ministry,Some c
         self.assertIn("/admin/login/?next=", response.url)
 
         self.client.logout()
-        self.client.login(email="superuser@fragdenstaat.de", password="froide")
+        self.client.login(email="superuser@fragdieschule.de", password="froide")
         response = self.client.get(url)
         self.assertEqual(response.status_code, 403)
 

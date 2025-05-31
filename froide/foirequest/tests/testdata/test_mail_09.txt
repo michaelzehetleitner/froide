@@ -1,24 +1,24 @@
 Return-Path: <MAILER-DAEMON>
-X-Original-To: sw+yurpykc1hr@fragdenstaat.de
-Delivered-To: foimail@fragdenstaat.de
+X-Original-To: sw+yurpykc1hr@fragdieschule.de
+Delivered-To: foimail@fragdieschule.de
 Received: from mail2.cnuv.de (mail2.cnuv.de [91.224.227.213])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by fragdenstaat.de (Postfix) with ESMTPS id BAF002E115F
-	for <sw+yurpykc1hr@fragdenstaat.de>; Wed, 25 Oct 2017 17:59:24 +0200 (CEST)
+	by fragdieschule.de (Postfix) with ESMTPS id BAF002E115F
+	for <sw+yurpykc1hr@fragdieschule.de>; Wed, 25 Oct 2017 17:59:24 +0200 (CEST)
 X-IronPort-AV: E=Sophos;i="5.43,432,1503352800";
    d="scan'208,217";a="10997195"
 Received: from unknown (HELO totemomail) ([10.97.31.67])
   by mail2-intern.isa.cnuv.de with ESMTP/TLS/AES256-SHA; 25 Oct 2017 17:55:42 +0200
 Received: from b31s000053.vbg.dom ([10.31.200.15])
           by totemomail (Totemo SMTP Server) with SMTP ID 182
-          for <prvs=46472e5e2=sw+yurpykc1hr@fragdenstaat.de>;
+          for <prvs=46472e5e2=sw+yurpykc1hr@fragdieschule.de>;
           Wed, 25 Oct 2017 17:55:42 +0200 (CEST)
 Received: from MailMarshal.Engine () by B31S000053.vbg.dom with Trustwave SEG (v7,5,7,9061)
 	id <D59f0b3fe0000>; Wed, 25 Oct 2017 17:55:42 +0200
 Message-ID: <D59f0b3fe0000@B31S000053.vbg.dom>
 From: no_reply@vbg.de
-To: prvs=46472e5e2=sw+yurpykc1hr@fragdenstaat.de
+To: prvs=46472e5e2=sw+yurpykc1hr@fragdieschule.de
 CC:
 Date: Wed, 25 Oct 2017 17:55:42 +0200
 Subject: E-Mail EmpfangsbestÃƒÂƒÃ‚Â¤tigung: Unterlagen nach ÃƒÂƒÃ‚Â‚ÃƒÂ‚Ã‚Â§ 6 Abs. 1 Arbeitsschutzgesetz [#25054]

@@ -54,7 +54,7 @@ class RequestDraftTest(TestCase):
         self.assertEqual(response.status_code, 400)
 
     def test_draft_logged_in(self):
-        ok = self.client.login(email="info@fragdenstaat.de", password="froide")
+        ok = self.client.login(email="info@fragdieschule.de", password="froide")
         self.assertTrue(ok)
 
         post = {
@@ -75,7 +75,7 @@ class RequestDraftTest(TestCase):
         drafts_url = reverse("account-drafts")
         self.assertTrue(response["Location"].endswith(drafts_url))
 
-        user = User.objects.filter(email="info@fragdenstaat.de").get()
+        user = User.objects.filter(email="info@fragdieschule.de").get()
         req = FoiRequest.objects.filter(title=post["subject"])
         self.assertTrue(req.count() == 0)
 
@@ -123,7 +123,7 @@ class RequestDraftTest(TestCase):
         self.assertEqual(response.status_code, 404)
         self.assertTrue(RequestDraft.objects.all().count() == 1)
 
-        ok = self.client.login(email="info@fragdenstaat.de", password="froide")
+        ok = self.client.login(email="info@fragdieschule.de", password="froide")
         response = self.client.post(
             reverse("foirequest-delete_draft"), {"draft_id": draft.pk}
         )
@@ -132,9 +132,9 @@ class RequestDraftTest(TestCase):
         self.assertTrue(RequestDraft.objects.all().count() == 0)
 
     def test_draft_make_request(self):
-        ok = self.client.login(email="info@fragdenstaat.de", password="froide")
+        ok = self.client.login(email="info@fragdieschule.de", password="froide")
         self.assertTrue(ok)
-        user = User.objects.get(email="info@fragdenstaat.de")
+        user = User.objects.get(email="info@fragdieschule.de")
         draft = factories.RequestDraftFactory(user=user, reference="foo:bar")
         draft.publicbodies.add(self.pb)
         response = self.client.get(draft.get_absolute_url())
@@ -143,7 +143,7 @@ class RequestDraftTest(TestCase):
         self.assertContains(response, draft.subject)
 
     def test_draft_token(self):
-        user = User.objects.get(email="info@fragdenstaat.de")
+        user = User.objects.get(email="info@fragdieschule.de")
         post = {
             "subject": "Test-Subject",
             "body": "This is another test body with Ümläut€n",
@@ -166,7 +166,7 @@ class RequestDraftTest(TestCase):
         self.assertIsNone(draft.user)
         self.assertTrue(bool(draft.token))
 
-        ok = self.client.login(email="info@fragdenstaat.de", password="froide")
+        ok = self.client.login(email="info@fragdieschule.de", password="froide")
         self.assertTrue(ok)
 
         response = self.client.get(

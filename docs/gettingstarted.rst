@@ -55,6 +55,10 @@ Froide requires one of Django's geospatial database backends. `<https://docs.dja
 
 Froide is designed to run with the PostgreSQL database with PostGIS extension. You may be able to use a different Django-supported geospatial database, but it is not recommended. Elasticsearch is used as a search engine.
 
+To inspect the database using Django's ``dbshell`` command, make sure the
+``psql`` client tool is installed and available on your ``PATH``. On Debian or
+Ubuntu you can install it via ``sudo apt install postgresql-client``.
+
 You can install these services as you wish. There is a `docker-compose.yml` that provides a set of these services for use with Docker.
 
 You need to configure these services in your Django settings or via environment variables. There's a `local_settings.py.example` that can be used to locally override settings.

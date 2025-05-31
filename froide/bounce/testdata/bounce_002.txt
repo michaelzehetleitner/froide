@@ -1,27 +1,27 @@
 Return-Path: <MAILER-DAEMON>
-X-Original-To: bounce+MARKER@fragdenstaat.de
-Delivered-To: bounce+MARKER@fragdenstaat.de
+X-Original-To: bounce+MARKER@fragdieschule.de
+Delivered-To: bounce+MARKER@fragdieschule.de
 Received: from mx-relay22-hz1.antispameurope.com (mx-relay22-hz1.antispameurope.com [94.100.132.222])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by mail.fragdenstaat.de (Postfix) with ESMTPS id 5EF2B1B6235B
-	for <bounce+MARKER@fragdenstaat.de>; Wed, 31 Oct 2018 11:21:46 +0100 (CET)
+	by mail.fragdieschule.de (Postfix) with ESMTPS id 5EF2B1B6235B
+	for <bounce+MARKER@fragdieschule.de>; Wed, 31 Oct 2018 11:21:46 +0100 (CET)
 Received: from unknown ([153.96.81.132]) by mx-relay22-hz1.antispameurope.com;
  Wed, 31 Oct 2018 11:21:41 +0100
 MIME-Version: 1.0
 From: <postmaster@izfp.fraunhofer.de>
 To:
-	<bounce+MARKER@fragdenstaat.de>
+	<bounce+MARKER@fragdieschule.de>
 Date: Wed, 31 Oct 2018 11:21:24 +0100
 Content-Type: multipart/report; report-type=delivery-status;
 	boundary="699eab8c-5685-4567-9ab0-601480245bef"
 Content-Language: de-DE
 Message-ID: <8776ae10-c321-4ec9-8606-e70a357126da@izfp.fraunhofer.de>
-In-Reply-To: <20181031102125.27798.77752@mail.fragdenstaat.de>
-References: <20181031102125.27798.77752@mail.fragdenstaat.de>
+In-Reply-To: <20181031102125.27798.77752@mail.fragdieschule.de>
+References: <20181031102125.27798.77752@mail.fragdieschule.de>
 Subject: =?iso-8859-1?Q?Unzustellbar:_Sollen_wir_deinen_Account_l=F6schen=3F?=
 X-cloud-security-sender:mailer-daemon
-X-cloud-security-recipient:bounce+MARKER@fragdenstaat.de
+X-cloud-security-recipient:bounce+MARKER@fragdieschule.de
 X-cloud-security-Virusscan:CLEAN
 X-cloud-security-disclaimer: This E-Mail was scanned by E-Mailservice on mx-relay22-hz1.antispameurope.com with BD22111C6D61
 X-cloud-security-connect: unknown[153.96.81.132], TLS=1, IP=153.96.81.132
@@ -61,16 +61,16 @@ Urspr=FCngliche Nachrichtenk=F6pfe:
 Received: from hsmx05.antispameurope.com (83.246.65.101) by
  THESEUS-II.izfp.fhg.de (10.25.99.48) with Microsoft SMTP Server (TLS) id
  14.3.361.1; Wed, 31 Oct 2018 11:21:23 +0100
-Received: from mail.fragdenstaat.de (88.99.57.224) by
+Received: from mail.fragdieschule.de (88.99.57.224) by
  mx-gate81-hz2.hornetsecurity.com; Wed, 31 Oct 2018 11:21:40 +0100
-Received: from mail.fragdenstaat.de (localhost.localdomain [127.0.0.1]) (us=
+Received: from mail.fragdieschule.de (localhost.localdomain [127.0.0.1]) (us=
 ing
  TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))        (No=
  client
- certificate requested) (Authenticated sender: mail@fragdenstaat.de)    by
- mail.fragdenstaat.de (Postfix) with ESMTPSA id E1BDE1B62375    for
+ certificate requested) (Authenticated sender: mail@fragdieschule.de)    by
+ mail.fragdieschule.de (Postfix) with ESMTPSA id E1BDE1B62375    for
  <eschmann@izfp.fhg.de>; Wed, 31 Oct 2018 11:21:25 +0100 (CET)
-DKIM-Signature: v=3D1; a=3Drsa-sha256; c=3Drelaxed/simple; d=3Dfragdenstaat=
+DKIM-Signature: v=3D1; a=3Drsa-sha256; c=3Drelaxed/simple; d=3Dfragdieschule=
 .de;
         s=3Dmail; t=3D1540981285;
         bh=3D7Hs1quhGEjndEaBTbNcQBfqEgH/2MvFASwD0C0w6CXo=3D;
@@ -86,12 +86,12 @@ Content-Type: text/plain; charset=3D"utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Subject: =3D?utf-8?q?Sollen_wir_deinen_Account_l=3DC3=3DB6schen=3D3F?=3D
-From: FragDenStaat.de <info@fragdenstaat.de>
+From: FragDieSchule.de <info@fragdieschule.de>
 To: <eschmann@izfp.fhg.de>
 Date: Wed, 31 Oct 2018 10:21:25 +0000
-Message-ID: <20181031102125.27798.77752@mail.fragdenstaat.de>
+Message-ID: <20181031102125.27798.77752@mail.fragdieschule.de>
 X-antispameurope-sender: bounce+1ghn95+dbygne_og5rq2hpz1mdrq9hc9cm+eschmann=
-=3Dizfp.fhg.de@fragdenstaat.de
+=3Dizfp.fhg.de@fragdieschule.de
 X-antispameurope-recipient: eschmann@izfp.fhg.de
 X-antispameurope-MSGID: d85f508c22f327329382ea4287bb87a5-0a04fd0fc2f7d0a5d6=
 8ba46f03fb26ed
@@ -100,7 +100,7 @@ X-antispameurope-disclaimer: This E-Mail was scanned by www.antispameurope.=
 com E-Mailservice on mx-gate81-hz2 with 821082CF308
 X-antispameurope-date: 1540981297
 X-antispameurope: INCOMING:
-X-antispameurope-Connect: mail.fragdenstaat.de[88.99.57.224],TLS=3D1;EMIG=
+X-antispameurope-Connect: mail.fragdieschule.de[88.99.57.224],TLS=3D1;EMIG=
 =3D0
 X-antispameurope-WC: 5:80:1:1821:0:16:0:0:0:0:0:0:0:0:0:1:0:8:10:14:0:0:0:0=
 :0:18:0:0:0:0:0:0:0:0::1:1:0:0:0:0:0
@@ -110,7 +110,7 @@ X-antispameurope-REASON: NOREASON:HO-WL
         * -0.6 BAYES_40 BODY: Bayesian spam probability is 20 to 40%
         *      [score: 0.3187]
 Return-Path: bounce+1ghn95+dbygne_og5rq2hpz1mdrq9hc9cm+eschmann=3Dizfp.fhg.=
-de@fragdenstaat.de
+de@fragdieschule.de
 
 
 --a61dd71c-96cb-4dc6-96fe-a644bb794a7f
@@ -139,15 +139,15 @@ nen f=FCr Administratoren:</b></p>
 <pre>Received: from hsmx05.antispameurope.com (83.246.65.101) by
  THESEUS-II.izfp.fhg.de (10.25.99.48) with Microsoft SMTP Server (TLS) id
  14.3.361.1; Wed, 31 Oct 2018 11:21:23 +0100
-Received: from mail.fragdenstaat.de (88.99.57.224) by
+Received: from mail.fragdieschule.de (88.99.57.224) by
  mx-gate81-hz2.hornetsecurity.com; Wed, 31 Oct 2018 11:21:40 +0100
-Received: from mail.fragdenstaat.de (localhost.localdomain [127.0.0.1])	(us=
+Received: from mail.fragdieschule.de (localhost.localdomain [127.0.0.1])	(us=
 ing
  TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))	(No client
- certificate requested)	(Authenticated sender: mail@fragdenstaat.de)	by
- mail.fragdenstaat.de (Postfix) with ESMTPSA id E1BDE1B62375	for
+ certificate requested)	(Authenticated sender: mail@fragdieschule.de)	by
+ mail.fragdieschule.de (Postfix) with ESMTPSA id E1BDE1B62375	for
  &lt;eschmann@izfp.fhg.de&gt;; Wed, 31 Oct 2018 11:21:25 +0100 (CET)
-DKIM-Signature: v=3D1; a=3Drsa-sha256; c=3Drelaxed/simple; d=3Dfragdenstaat=
+DKIM-Signature: v=3D1; a=3Drsa-sha256; c=3Drelaxed/simple; d=3Dfragdieschule=
 .de;
 	s=3Dmail; t=3D1540981285;
 	bh=3D7Hs1quhGEjndEaBTbNcQBfqEgH/2MvFASwD0C0w6CXo=3D;
@@ -162,12 +162,12 @@ Content-Type: text/plain; charset=3D&quot;utf-8&quot;
 MIME-Version: 1.0
 Content-Transfer-Encoding: 8bit
 Subject: =3D?utf-8?q?Sollen_wir_deinen_Account_l=3DC3=3DB6schen=3D3F?=3D
-From: FragDenStaat.de &lt;info@fragdenstaat.de&gt;
+From: FragDieSchule.de &lt;info@fragdieschule.de&gt;
 To: &lt;eschmann@izfp.fhg.de&gt;
 Date: Wed, 31 Oct 2018 10:21:25 +0000
-Message-ID: &lt;20181031102125.27798.77752@mail.fragdenstaat.de&gt;
+Message-ID: &lt;20181031102125.27798.77752@mail.fragdieschule.de&gt;
 X-antispameurope-sender: bounce+1ghn95+dbygne_og5rq2hpz1mdrq9hc9cm+eschmann=
-=3Dizfp.fhg.de@fragdenstaat.de
+=3Dizfp.fhg.de@fragdieschule.de
 X-antispameurope-recipient: eschmann@izfp.fhg.de
 X-antispameurope-MSGID: d85f508c22f327329382ea4287bb87a5-0a04fd0fc2f7d0a5d6=
 8ba46f03fb26ed
@@ -176,7 +176,7 @@ X-antispameurope-disclaimer: This E-Mail was scanned by www.antispameurope.=
 com E-Mailservice on mx-gate81-hz2 with 821082CF308
 X-antispameurope-date: 1540981297
 X-antispameurope: INCOMING:
-X-antispameurope-Connect: mail.fragdenstaat.de[88.99.57.224],TLS=3D1;EMIG=
+X-antispameurope-Connect: mail.fragdieschule.de[88.99.57.224],TLS=3D1;EMIG=
 =3D0
 X-antispameurope-WC: 5:80:1:1821:0:16:0:0:0:0:0:0:0:0:0:1:0:8:10:14:0:0:0:0=
 :0:18:0:0:0:0:0:0:0:0::1:1:0:0:0:0:0
@@ -186,7 +186,7 @@ X-antispameurope-REASON: NOREASON:HO-WL
 	* -0.6 BAYES_40 BODY: Bayesian spam probability is 20 to 40%
 	*      [score: 0.3187]
 Return-Path: bounce+1ghn95+dbygne_og5rq2hpz1mdrq9hc9cm+eschmann=3Dizfp.fhg.=
-de@fragdenstaat.de
+de@fragdieschule.de
 </pre>
 </font>
 </body>
@@ -213,14 +213,14 @@ Content-Type: message/rfc822
 Received: from hsmx05.antispameurope.com (83.246.65.101) by
  THESEUS-II.izfp.fhg.de (10.25.99.48) with Microsoft SMTP Server (TLS) id
  14.3.361.1; Wed, 31 Oct 2018 11:21:23 +0100
-Received: from mail.fragdenstaat.de (88.99.57.224) by
+Received: from mail.fragdieschule.de (88.99.57.224) by
  mx-gate81-hz2.hornetsecurity.com; Wed, 31 Oct 2018 11:21:40 +0100
-Received: from mail.fragdenstaat.de (localhost.localdomain [127.0.0.1])	(using
+Received: from mail.fragdieschule.de (localhost.localdomain [127.0.0.1])	(using
  TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))	(No client
- certificate requested)	(Authenticated sender: mail@fragdenstaat.de)	by
- mail.fragdenstaat.de (Postfix) with ESMTPSA id E1BDE1B62375	for
+ certificate requested)	(Authenticated sender: mail@fragdieschule.de)	by
+ mail.fragdieschule.de (Postfix) with ESMTPSA id E1BDE1B62375	for
  <eschmann@izfp.fhg.de>; Wed, 31 Oct 2018 11:21:25 +0100 (CET)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=fragdenstaat.de;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=fragdieschule.de;
 	s=mail; t=1540981285;
 	bh=7Hs1quhGEjndEaBTbNcQBfqEgH/2MvFASwD0C0w6CXo=;
 	h=Subject:From:To:Date;
@@ -234,29 +234,29 @@ Content-Type: text/plain; charset="utf-8"
 MIME-Version: 1.0
 Content-Transfer-Encoding: quoted-printable
 Subject: =?utf-8?q?Sollen_wir_deinen_Account_l=C3=B6schen=3F?=
-From: FragDenStaat.de <info@fragdenstaat.de>
+From: FragDieSchule.de <info@fragdieschule.de>
 To: <eschmann@izfp.fhg.de>
 Date: Wed, 31 Oct 2018 10:21:25 +0000
-Message-ID: <20181031102125.27798.77752@mail.fragdenstaat.de>
-X-antispameurope-sender: bounce+MARKER@fragdenstaat.de
+Message-ID: <20181031102125.27798.77752@mail.fragdieschule.de>
+X-antispameurope-sender: bounce+MARKER@fragdieschule.de
 X-antispameurope-recipient: eschmann@izfp.fhg.de
 X-antispameurope-MSGID: d85f508c22f327329382ea4287bb87a5-0a04fd0fc2f7d0a5d68ba46f03fb26ed
 X-antispameurope-Virusscan: CLEAN
 X-antispameurope-disclaimer: This E-Mail was scanned by www.antispameurope.com E-Mailservice on mx-gate81-hz2 with 821082CF308
 X-antispameurope-date: 1540981297
 X-antispameurope: INCOMING:
-X-antispameurope-Connect: mail.fragdenstaat.de[88.99.57.224],TLS=1;EMIG=0
+X-antispameurope-Connect: mail.fragdieschule.de[88.99.57.224],TLS=1;EMIG=0
 X-antispameurope-WC: 5:80:1:1821:0:16:0:0:0:0:0:0:0:0:0:1:0:8:10:14:0:0:0:0:0:18:0:0:0:0:0:0:0:0::1:1:0:0:0:0:0
 X-antispameurope-Spamstatus: CLEAN
 X-antispameurope-REASON: NOREASON:HO-WL
 	* -0.1 LONGMAIL_MANY_WORDS BODY: No description available.
 	* -0.6 BAYES_40 BODY: Bayesian spam probability is 20 to 40%
 	*      [score: 0.3187]
-Return-Path: bounce+MARKER@fragdenstaat.de
+Return-Path: bounce+MARKER@fragdieschule.de
 
 Liebe*r ,
 
-wahrscheinlich hast du es vergessen, aber du hast noch einen FragDenStaat-A=
+wahrscheinlich hast du es vergessen, aber du hast noch einen FragDieSchule-A=
 ccount! Allerdings haben wir festgestellt, dass du dich seit vielen Jahren =
 nicht mehr eingeloggt hast.
 Deswegen werden wir deinen Account in 10 Tagen deaktivieren, was sp=C3=A4te=
@@ -265,7 +265,7 @@ r zu einer L=C3=B6schung f=C3=BChren wird.
 Solltest du deinen Account behalten wollen, klicke bitte auf den folgenden =
 Link. Dort kannst du auch erfahren, welche Anfragen von dir noch bei FragDe=
 nStaat gespeichert sind:
-https://fragdenstaat.de/account/go/3374/310a6d88eef45324a858fdae9b48136b/ac=
+https://fragdieschule.de/account/go/3374/310a6d88eef45324a858fdae9b48136b/ac=
 count/requests/
 
 Beste Gr=C3=BC=C3=9Fe!

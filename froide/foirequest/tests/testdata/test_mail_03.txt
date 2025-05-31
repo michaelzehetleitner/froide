@@ -1,24 +1,24 @@
 Return-Path: <ifg-anfragen@auswaertiges-amt.de>
-X-Original-To: m.dindler.ap9rjdapfas@fragdenstaat.de
-Delivered-To: foimail@fragdenstaat.de
+X-Original-To: m.dindler.ap9rjdapfas@fragdieschule.de
+Delivered-To: foimail@fragdieschule.de
 Received: from localhost (localhost [127.0.0.1])
-	by fragdenstaat.de (Postfix) with ESMTP id 957B895C7B1
-	for <m.dindler.ap9rjdapfas@fragdenstaat.de>; Mon, 23 Apr 2012 14:21:50 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at fragdenstaat.de
-Received: from fragdenstaat.de ([127.0.0.1])
-	by localhost (fragdenstaat.de [127.0.0.1]) (amavisd-new, port 10024)
+	by fragdieschule.de (Postfix) with ESMTP id 957B895C7B1
+	for <m.dindler.ap9rjdapfas@fragdieschule.de>; Mon, 23 Apr 2012 14:21:50 +0200 (CEST)
+X-Virus-Scanned: Debian amavisd-new at fragdieschule.de
+Received: from fragdieschule.de ([127.0.0.1])
+	by localhost (fragdieschule.de [127.0.0.1]) (amavisd-new, port 10024)
 	with ESMTP id mcCr2yQcVcEu
-	for <m.dindler.ap9rjdapfas@fragdenstaat.de>;
+	for <m.dindler.ap9rjdapfas@fragdieschule.de>;
 	Mon, 23 Apr 2012 14:20:47 +0200 (CEST)
 X-Greylist: delayed 550 seconds by postgrey-1.32 at adenauer; Mon, 23 Apr 2012 14:20:41 CEST
 Received: from m1-bn.bund.de (m1-bn.bund.de [77.87.228.73])
 	(using TLSv1 with cipher DHE-RSA-AES256-SHA (256/256 bits))
 	(No client certificate requested)
-	by fragdenstaat.de (Postfix) with ESMTPS id 63AD895C7B0
-	for <m.dindler.ap9rjdapfas@fragdenstaat.de>; Mon, 23 Apr 2012 14:20:40 +0200 (CEST)
+	by fragdieschule.de (Postfix) with ESMTPS id 63AD895C7B0
+	for <m.dindler.ap9rjdapfas@fragdieschule.de>; Mon, 23 Apr 2012 14:20:40 +0200 (CEST)
 Received: from m1.mfw.bn.ivbb.bund.de (localhost [127.0.0.1])
 	by m1-bn.bund.de (8.14.3/8.14.3) with ESMTP id q3NC79QB028390
-	for <m.dindler.ap9rjdapfas@fragdenstaat.de>; Mon, 23 Apr 2012 14:07:09 +0200 (CEST)
+	for <m.dindler.ap9rjdapfas@fragdieschule.de>; Mon, 23 Apr 2012 14:07:09 +0200 (CEST)
 Received: (from localhost) by m1.mfw.bn.ivbb.bund.de (MSCAN) id 8/m1.mfw.bn.ivbb.bund.de/smtp-gw/mscan; Mon Apr 23 14:07:09
      2012
 X-P350-Id: 7caa2eea585c8ff2
@@ -29,7 +29,7 @@ X-Powered-BY: OTRS - Open Ticket Request System (http://otrs.org/)
 X-Mailer: OTRS Mail Service (2.0.4)
 Date: Mon, 23 Apr 2012 14:06:07 +0200
 Message-ID: <1335182767.306151.581323724.4215.46@ifg.intra.aa>
-To: "Mathias Schindler" <m.dindler.ap9rjdapfas@fragdenstaat.de>
+To: "Mathias Schindler" <m.dindler.ap9rjdapfas@fragdieschule.de>
 Organization: Auswaertiges Amt
 From: "IFG Anfragen" <ifg-anfragen@auswaertiges-amt.de>
 X-Virus-Scanned: by amavisd-new-20030616-p10 (Debian) at

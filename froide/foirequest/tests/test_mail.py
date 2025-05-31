@@ -29,7 +29,7 @@ def p(path: str) -> str:
 
 @pytest.fixture
 def foirequest_with_msg(world):
-    secret_address = "sw+yurpykc1hr@fragdenstaat.de"
+    secret_address = "sw+yurpykc1hr@fragdieschule.de"
     date = datetime(2010, 6, 5, 5, 54, 40, tzinfo=dt_timezone.utc)
     with mute_signals(signals.pre_save, signals.post_save):
         req = factories.FoiRequestFactory.create(
@@ -87,7 +87,7 @@ def test_working(foirequest_with_msg):
         == "Anfrage nach dem Informationsfreiheitsgesetz;  Förderanträge und Verwendungsnachweise der Hanns-Seidel-Stiftung;  Vg. 375-2018"
     )
     assert message.recipient == foirequest_with_msg.user.display_name()
-    assert message.recipient_email == "sw+yurpykc1hr@fragdenstaat.de"
+    assert message.recipient_email == "sw+yurpykc1hr@fragdieschule.de"
 
 
 @pytest.mark.django_db
@@ -251,10 +251,10 @@ def test_address_list():
 
 
 @pytest.mark.django_db
-@override_settings(FOI_EMAIL_DOMAIN=["fragdenstaat.de", "example.com"])
+@override_settings(FOI_EMAIL_DOMAIN=["fragdieschule.de", "example.com"])
 def test_additional_domains(foirequest_with_msg):
     with open(p("test_mail_01.txt"), "rb") as f:
-        process_mail.delay(f.read().replace(b"@fragdenstaat.de", b"@example.com"))
+        process_mail.delay(f.read().replace(b"@fragdieschule.de", b"@example.com"))
     messages = foirequest_with_msg.messages
     assert len(messages) == 2
     assert "Jörg Gahl-Killen" in [m.sender_name for m in messages]
@@ -306,10 +306,10 @@ def test_html_only_mail():
 
 @pytest.fixture
 def deferred_message_setup(world):
-    secret_address = "sw+yurpykc1hr@fragdenstaat.de"
+    secret_address = "sw+yurpykc1hr@fragdieschule.de"
     req = factories.FoiRequestFactory.create(site=world, secret_address=secret_address)
     other_req = factories.FoiRequestFactory.create(
-        site=world, secret_address="sw+abcsd@fragdenstaat.de"
+        site=world, secret_address="sw+abcsd@fragdieschule.de"
     )
     factories.FoiMessageFactory.create(request=req)
     return {"secret_address": secret_address, "req": req, "other_req": other_req}
@@ -395,7 +395,7 @@ def test_pb_unknown(deferred_message_setup):
 
 @pytest.fixture
 def spammail_setup(world):
-    secret_address = "sw+yurpykc1hr@fragdenstaat.de"
+    secret_address = "sw+yurpykc1hr@fragdieschule.de"
     req = factories.FoiRequestFactory.create(site=world, secret_address=secret_address)
     factories.FoiMessageFactory.create(request=req)
     factories.FoiMessageFactory.create(request=req, is_response=True)
@@ -447,7 +447,7 @@ def test_existing_spam(spammail_setup):
 
 @pytest.fixture
 def req_with_bounce_msg(world):
-    secret_address = "sw+yurpykc1hr@fragdenstaat.de"
+    secret_address = "sw+yurpykc1hr@fragdieschule.de"
     req = factories.FoiRequestFactory.create(site=world, secret_address=secret_address)
     factories.FoiMessageFactory.create(
         timestamp=timezone.now().replace(2012, 1, 1),
@@ -472,7 +472,7 @@ def test_bounce(req_with_bounce_msg):
 
 @pytest.fixture
 def req_with_msgs(world):
-    secret_address = "sw+yurpykc1hr@fragdenstaat.de"
+    secret_address = "sw+yurpykc1hr@fragdieschule.de"
     req = factories.FoiRequestFactory.create(
         site=world, secret_address=secret_address, closed=True
     )

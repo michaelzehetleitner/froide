@@ -26,7 +26,7 @@ class RequestProjectTest(TestCase):
         self.perm = Permission.objects.get(content_type=ct, codename="create_batch")
 
     def test_create_project(self):
-        user = User.objects.get(email="info@fragdenstaat.de")
+        user = User.objects.get(email="info@fragdieschule.de")
         user.user_permissions.add(self.perm)
 
         ok = self.client.login(email=user.email, password="froide")
@@ -71,7 +71,7 @@ class RequestProjectTest(TestCase):
         self.assertEqual(response.status_code, 302)
 
     def test_create_project_full_text(self):
-        user = User.objects.get(email="info@fragdenstaat.de")
+        user = User.objects.get(email="info@fragdieschule.de")
         user.user_permissions.add(self.perm)
 
         ok = self.client.login(email=user.email, password="froide")

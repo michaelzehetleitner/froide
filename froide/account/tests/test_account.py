@@ -36,9 +36,9 @@ SPAM_ENABLED_CONFIG["spam_protection"] = True
 
 @pytest.mark.django_db
 def test_account_page(world, client):
-    ok = client.login(email="info@fragdenstaat.de", password="wrong")
+    ok = client.login(email="info@fragdieschule.de", password="wrong")
     assert not ok
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     assert ok
     response = client.get(reverse("account-requests"))
     assert response.status_code == 200
@@ -48,10 +48,10 @@ def test_account_page(world, client):
 def test_account_drafts(world, client, request_draft_factory):
     response = client.get(reverse("account-drafts"))
     assert response.status_code == 302
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     assert ok
 
-    user = User.objects.get(email="info@fragdenstaat.de")
+    user = User.objects.get(email="info@fragdieschule.de")
     draft = request_draft_factory(user=user)
 
     response = client.get(reverse("account-drafts"))
@@ -64,7 +64,7 @@ def test_account_drafts(world, client, request_draft_factory):
 def test_account_following(world, client):
     response = client.get(reverse("account-following"))
     assert response.status_code == 302
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     assert ok
 
     response = client.get(reverse("account-following"))
@@ -83,19 +83,19 @@ def test_login_page(world, client):
     assert response.status_code == 200
     response = client.post(
         reverse("account-login"),
-        {"username": "info@fragdenstaat.de", "password": "dummy"},
+        {"username": "info@fragdieschule.de", "password": "dummy"},
     )
     assert response.status_code == 200
     response = client.post(
         reverse("account-login"),
-        {"username": "info@fragdenstaat.de", "password": "froide"},
+        {"username": "info@fragdieschule.de", "password": "froide"},
     )
     assert response.status_code == 302
     response = client.get(reverse("account-requests"))
     assert response.status_code == 200
     response = client.post(
         reverse("account-login"),
-        {"username": "info@fragdenstaat.de", "password": "froide"},
+        {"username": "info@fragdieschule.de", "password": "froide"},
     )
     # already logged in, login again gives 302
     assert response.status_code == 302
@@ -106,13 +106,13 @@ def test_login_page(world, client):
     response = client.post(reverse("account-logout"))
     assert response.status_code == 302
 
-    user = User.objects.get(email="info@fragdenstaat.de")
+    user = User.objects.get(email="info@fragdieschule.de")
     user.is_active = False
     user.save()
     client.logout()
     response = client.post(
         reverse("account-login"),
-        {"email": "info@fragdenstaat.de", "password": "froide"},
+        {"email": "info@fragdieschule.de", "password": "froide"},
     )
     # inactive users can't login via password
     assert response.status_code == 200
@@ -130,7 +130,7 @@ def test_signup(world, client):
         "user_email": "horst.porst",
         "time": (datetime.utcnow() - timedelta(seconds=30)).timestamp(),
     }
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(reverse("account-signup"), post)
     assert response.status_code == 302
     assert response.url == "/account/"
@@ -293,7 +293,7 @@ def test_next_link_login(world, client):
     assert response.content.decode("utf-8").count(url) == 2
     response = client.post(
         reverse("account-login"),
-        {"username": "info@fragdenstaat.de", "next": url, "password": "froide"},
+        {"username": "info@fragdieschule.de", "next": url, "password": "froide"},
     )
     assert response.status_code == 302
     assert response.url.endswith(url)
@@ -340,16 +340,16 @@ def test_change_password(world, client):
     assert reverse("account-login") in response["Location"]
     assert "?next=" in response["Location"]
 
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     response = client.post(reverse("account-change_password"), data)
     assert response.status_code == 400
     data["new_password2"] = "froide1froide2"
     response = client.post(reverse("account-change_password"), data)
     assert response.status_code == 302
     client.logout()
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     assert not ok
-    ok = client.login(email="info@fragdenstaat.de", password=data["new_password2"])
+    ok = client.login(email="info@fragdieschule.de", password=data["new_password2"])
     assert ok
 
 
@@ -358,7 +358,7 @@ def test_send_reset_password_link(world, client):
     mail.outbox = []
     response = client.get(reverse("account-send_reset_password_link"))
     assert response.status_code == 405
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     data = {"pwreset-email": "unknown@example.com"}
     response = client.post(reverse("account-send_reset_password_link"))
     assert response.status_code == 302
@@ -367,7 +367,7 @@ def test_send_reset_password_link(world, client):
     response = client.post(reverse("account-send_reset_password_link"), data)
     assert response.status_code == 302
     assert len(mail.outbox) == 0
-    data["pwreset-email"] = "info@fragdenstaat.de"
+    data["pwreset-email"] = "info@fragdieschule.de"
     response = client.post(reverse("account-send_reset_password_link"), data)
     assert response.status_code == 302
     message = mail.outbox[0]
@@ -398,7 +398,7 @@ def test_send_reset_password_link(world, client):
     response = client.get(reverse("account-requests"))
     assert response.status_code == 200
     client.logout()
-    ok = client.login(email="info@fragdenstaat.de", password="froide4froide5")
+    ok = client.login(email="info@fragdieschule.de", password="froide4froide5")
     assert ok
 
 
@@ -407,7 +407,7 @@ def test_next_password_reset(world, client):
     mail.outbox = []
     mes = FoiMessage.objects.all()[0]
     url = mes.get_absolute_url()
-    data = {"pwreset-email": "info@fragdenstaat.de", "next": url}
+    data = {"pwreset-email": "info@fragdieschule.de", "next": url}
     response = client.post(reverse("account-send_reset_password_link"), data)
     assert response.status_code == 302
     assert response.url.endswith(url)
@@ -464,7 +464,7 @@ def test_change_user(world, client):
     assert response.status_code == 302
     assert reverse("account-login") in response["Location"]
     assert "?next=" in response["Location"]
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     assert ok
     response = client.post(reverse("account-change_user"), data)
     assert response.status_code == 302
@@ -518,7 +518,7 @@ def test_go(world, client):
     assert not response.context["user"] == user
 
     # Try logging in via link: other user is authenticated
-    ok = client.login(email="info@fragdenstaat.de", password="froide")
+    ok = client.login(email="info@fragdieschule.de", password="froide")
     assert ok
     autologin = user.get_autologin_url(test_url)
     response = client.post(autologin)
@@ -617,7 +617,7 @@ def test_change_email(world, client):
     assert "?next=" in response["Location"]
     assert len(mail.outbox) == 0
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
 
     response = client.post(
         reverse("account-change_user"),
@@ -683,7 +683,7 @@ def test_account_delete(world, client):
     assert "?next=" in response["Location"]
 
     user = User.objects.get(username="sw")
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
 
     response = client.get(reverse("account-settings"))
     assert response.status_code == 200

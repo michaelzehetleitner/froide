@@ -1,14 +1,14 @@
 Return-Path: <ifg@bsi.bund.de>
-X-Original-To: s.wehrmeyer+axb4afh@fragdenstaat.de
-Delivered-To: foimail@fragdenstaat.de
+X-Original-To: s.wehrmeyer+axb4afh@fragdieschule.de
+Delivered-To: foimail@fragdieschule.de
 Received: from m3-bn.bund.de (m3-bn.bund.de [77.87.228.75])
 	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
 	(No client certificate requested)
-	by fragdenstaat.de (Postfix) with ESMTPS id 05B872E0033
-	for <s.wehrmeyer+axb4afh@fragdenstaat.de>; Tue,  4 Sep 2018 09:25:21 +0200 (CEST)
+	by fragdieschule.de (Postfix) with ESMTPS id 05B872E0033
+	for <s.wehrmeyer+axb4afh@fragdieschule.de>; Tue,  4 Sep 2018 09:25:21 +0200 (CEST)
 Received: from m3.mfw.bn.ivbb.bund.de (localhost [127.0.0.1])
 	by m3.mfw.bn.ivbb.bund.de (Postfix) with ESMTP id C3D1D52848
-	for <s.wehrmeyer+axb4afh@fragdenstaat.de>; Tue,  4 Sep 2018 09:25:20 +0200 (CEST)
+	for <s.wehrmeyer+axb4afh@fragdieschule.de>; Tue,  4 Sep 2018 09:25:20 +0200 (CEST)
 Received: (from localhost) by m3.mfw.bn.ivbb.bund.de (MSCAN) id 4/m3.mfw.bn.ivbb.bund.de/smtp-gw/mscan; Tue Sep 4 09:25:20
      2018
 X-P350-Id: 5c719afa385d6214
@@ -16,12 +16,12 @@ X-Virus-Scanned: amavisd-new at bsi.bund.de
 X-Virus-Scanned: by amavisd-new at bsi.bund.de
 From: "Tester, Theresa" <ifg@bsi.bund.de>
 Organization: BSI Bonn
-To: T M <s.wehrmeyer+axb4afh@fragdenstaat.de>
+To: T M <s.wehrmeyer+axb4afh@fragdieschule.de>
 Subject: Bescheid zu Ihrer =?utf-8?q?erg=C3=A4nzten_IFG-Anfrage_Bestellung?= Infomaterial, =?utf-8?q?Brosch=C3=BCren=2E=2E=2E?= [#32154]
 Date: Tue, 4 Sep 2018 09:25:07 +0200
 User-Agent: KMail/1.9.10 (enterprise35 20150610.75555ff)
-References: <20180725132804.5741.2827@fragdenstaat.de>
-In-Reply-To: <20180725132804.5741.2827@fragdenstaat.de>
+References: <20180725132804.5741.2827@fragdieschule.de>
+In-Reply-To: <20180725132804.5741.2827@fragdieschule.de>
 X-KMail-QuotePrefix: > 
 MIME-Version: 1.0
 Content-Type: Multipart/Mixed;
@@ -51,7 +51,7 @@ Theresa Tester
 
 __________ urspr=C3=BCngliche Nachricht __________
 
-Von:		T M <s.wehrmeyer+axb4afh@fragdenstaat.de>
+Von:		T M <s.wehrmeyer+axb4afh@fragdieschule.de>
 Datum:	Mittwoch, 25. Juli 2018, 15:28:04
 An:		ifg@bsi.bund.de
 Kopie:=09
@@ -77,7 +77,7 @@ tischer
 > Anton Anfragesteller
 >
 > Anfragenr: 32154
-> Antwort an: s.wehrmeyer+axb4afh@fragdenstaat.de
+> Antwort an: s.wehrmeyer+axb4afh@fragdieschule.de
 >
 > Postanschrift
 > T M

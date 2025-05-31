@@ -29,7 +29,7 @@ from froide.helper.search.signal_processor import realtime_search
 from froide.publicbody.models import Category, FoiLaw, Jurisdiction, PublicBody
 
 User = get_user_model()
-MEDIA_DOMAIN = "media.frag-den-staat.de"
+MEDIA_DOMAIN = "media.frag-die-schule.de"
 
 
 def assertForbidden(response):
@@ -223,7 +223,7 @@ def test_show_request(world, client):
     req.save()
     response = client.get(reverse("foirequest-show", kwargs={"slug": req.slug}))
     assertForbidden(response)
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.get(reverse("foirequest-show", kwargs={"slug": req.slug}))
     assert response.status_code == 200
 
@@ -268,7 +268,7 @@ def test_auth_links(world, client):
     assert response.status_code == 302
     assert response["Location"].endswith(req.get_absolute_url())
     # Check logged in with wrong code
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.get(
         reverse("foirequest-auth", kwargs={"obj_id": req.id, "code": "0a"})
     )
@@ -348,13 +348,13 @@ def test_search(world, client):
 
 @pytest.mark.django_db
 @override_settings(
-    SITE_URL="https://fragdenstaat.de",
+    SITE_URL="https://fragdieschule.de",
     MEDIA_URL="https://" + MEDIA_DOMAIN + "/files/",
-    ALLOWED_HOSTS=("fragdenstaat.de", MEDIA_DOMAIN),
+    ALLOWED_HOSTS=("fragdieschule.de", MEDIA_DOMAIN),
 )
 @mock.patch(
     "froide.foirequest.auth.AttachmentCrossDomainMediaAuth.SITE_URL",
-    "https://fragdenstaat.de",
+    "https://fragdieschule.de",
 )
 def test_request_not_public(world, client):
     att = FoiAttachment.objects.filter(approved=True)[0]
@@ -362,12 +362,12 @@ def test_request_not_public(world, client):
     req.visibility = 1
     req.save()
     response = client.get(
-        att.get_absolute_domain_auth_url(), HTTP_HOST="fragdenstaat.de"
+        att.get_absolute_domain_auth_url(), HTTP_HOST="fragdieschule.de"
     )
     assertForbidden(response)
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.get(
-        att.get_absolute_domain_auth_url(), HTTP_HOST="fragdenstaat.de"
+        att.get_absolute_domain_auth_url(), HTTP_HOST="fragdieschule.de"
     )
     assert response.status_code == 302
     assert MEDIA_DOMAIN in response["Location"]
@@ -382,9 +382,9 @@ def test_request_not_public(world, client):
 
 @pytest.mark.django_db
 @override_settings(
-    SITE_URL="https://fragdenstaat.de",
+    SITE_URL="https://fragdieschule.de",
     MEDIA_URL="https://" + MEDIA_DOMAIN + "/files/",
-    ALLOWED_HOSTS=("fragdenstaat.de", MEDIA_DOMAIN),
+    ALLOWED_HOSTS=("fragdieschule.de", MEDIA_DOMAIN),
 )
 def test_request_media_tokens(world, client):
     att = FoiAttachment.objects.filter(approved=True)[0]
@@ -392,16 +392,16 @@ def test_request_media_tokens(world, client):
     req.visibility = 1
     req.save()
     response = client.get(
-        att.get_absolute_domain_auth_url(), HTTP_HOST="fragdenstaat.de"
+        att.get_absolute_domain_auth_url(), HTTP_HOST="fragdieschule.de"
     )
     assertForbidden(response)
-    loggedin = client.login(email="info@fragdenstaat.de", password="froide")
+    loggedin = client.login(email="info@fragdieschule.de", password="froide")
     assert loggedin
 
     response = client.get(
         att.get_absolute_domain_auth_url().replace("?download", ""),
         follow=False,
-        HTTP_HOST="fragdenstaat.de",
+        HTTP_HOST="fragdieschule.de",
     )
     # permanent redirect to attachment page if no refresh
     assert response.status_code == 301
@@ -412,7 +412,7 @@ def test_request_media_tokens(world, client):
     response = client.get(
         att.get_absolute_domain_auth_url(),
         follow=False,
-        HTTP_HOST="fragdenstaat.de",
+        HTTP_HOST="fragdieschule.de",
     )
     # temporary redirect to media file
     assert response.status_code == 302
@@ -442,9 +442,9 @@ def test_request_media_tokens(world, client):
 
 @pytest.mark.django_db
 @override_settings(
-    SITE_URL="https://fragdenstaat.de",
+    SITE_URL="https://fragdieschule.de",
     MEDIA_URL="https://" + MEDIA_DOMAIN + "/files/",
-    ALLOWED_HOSTS=("fragdenstaat.de", MEDIA_DOMAIN),
+    ALLOWED_HOSTS=("fragdieschule.de", MEDIA_DOMAIN),
     FOI_MEDIA_TOKEN_EXPIRY=0,
 )
 @mock.patch(
@@ -452,7 +452,7 @@ def test_request_media_tokens(world, client):
 )
 @mock.patch(
     "froide.foirequest.auth.AttachmentCrossDomainMediaAuth.SITE_URL",
-    "https://fragdenstaat.de",
+    "https://fragdieschule.de",
 )
 def test_request_media_tokens_expired(world, client):
     att = FoiAttachment.objects.filter(approved=True)[0]
@@ -460,12 +460,12 @@ def test_request_media_tokens_expired(world, client):
     req.visibility = 1
     req.save()
 
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
 
     response = client.get(
         att.get_absolute_domain_auth_url(),
         follow=False,
-        HTTP_HOST="fragdenstaat.de",
+        HTTP_HOST="fragdieschule.de",
     )
     assert response.status_code == 302
     redirect_url = response["Location"]
@@ -480,7 +480,7 @@ def test_request_media_tokens_expired(world, client):
     # Redirect back for re-authenticating
     redirect_url = response["Location"]
     _, _, domain, path = redirect_url.split("/", 3)
-    assert domain == "fragdenstaat.de"
+    assert domain == "fragdieschule.de"
     assert "/" + path in att.get_absolute_domain_auth_url()
 
 
@@ -489,7 +489,7 @@ def test_attachment_not_approved(world, client):
     att = FoiAttachment.objects.filter(approved=False)[0]
     response = client.get(att.get_absolute_url())
     assertForbidden(response)
-    client.login(email="info@fragdenstaat.de", password="froide")
+    client.login(email="info@fragdieschule.de", password="froide")
     response = client.get(att.get_absolute_url())
     assert response.status_code == 200
 

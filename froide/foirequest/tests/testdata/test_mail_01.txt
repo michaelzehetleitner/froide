@@ -1,5 +1,5 @@
 Return-path: <hb@example.com>
-Envelope-to: s.wehrmeyer+axb4afh@fragdenstaat.de
+Envelope-to: s.wehrmeyer+axb4afh@fragdieschule.de
 Delivery-date: Mon, 05 Jul 2010 00:54:48 -0500
 Received: from degree.example.com ([79.23.113.3])
 	by ki.site5.com with smtp (Exim 4.69)
@@ -13,7 +13,7 @@ Received: by simscan 1.4.0 ppid: 10722, pid: 10726, t: 0.1400s
 Received: from unknown (HELO ZEUS) (85.183.22.56)
   by start.example.com with SMTP; 5 Jul 2010 05:54:45 -0000
 From: "=?Windows-1252?Q?J=F6rg=20Gahl-Killen?=" <hb@example.com>
-To: <sw+yurpykc1hr@fragdenstaat.de>
+To: <sw+yurpykc1hr@fragdieschule.de>
 Cc: Peter Freudenberg <peter@example.org>, Stefan Wehrmeyer <stefan.wehrmeyer@example.org>, 
 	Harry Porters <harry.porters@example.org>, Julia Romeo <julia.romeo@example.org>, 
 	UKF DE Executive Board <ukf-de-board@lists.example.org>

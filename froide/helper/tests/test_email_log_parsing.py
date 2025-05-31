@@ -60,7 +60,7 @@ MAIL_2_DATA = {
 
 @pytest.fixture
 def req_with_msgs(world):
-    secret_address = "sw+yurpykc1hr@fragdenstaat.de"
+    secret_address = "sw+yurpykc1hr@fragdieschule.de"
     req = factories.FoiRequestFactory.create(
         site=world, secret_address=secret_address, closed=True
     )
