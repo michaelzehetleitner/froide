@@ -1,6 +1,7 @@
 import os
 
 from django.contrib.sites.models import Site
+from django.conf import settings
 from django.db.models import signals
 from django.utils.translation import activate
 
@@ -69,6 +70,14 @@ def request_throttle_settings(settings):
     froide_config = settings.FROIDE_CONFIG
     froide_config["request_throttle"] = [(2, 60), (5, 60 * 60)]
     settings.FROIDE_CONFIG = froide_config
+
+
+@pytest.fixture(autouse=True)
+def ensure_site():
+    Site.objects.get_or_create(
+        id=settings.SITE_ID,
+        defaults={"domain": "localhost", "name": "localhost"},
+    )
 
 
 @pytest.fixture(autouse=True)
