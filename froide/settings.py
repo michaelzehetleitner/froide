@@ -34,7 +34,12 @@ class Base(Configuration):
             "django.contrib.flatpages",
             "django.contrib.sitemaps",
             "django.contrib.humanize",
-            "django.contrib.gis",
+            # geodjango is optional
+            *(
+                ["django.contrib.gis"]
+                if os.environ.get("FROIDE_USE_GDAL") in {"1", "true", "True"}
+                else []
+            ),
             "channels",
             # external
             "django_elasticsearch_dsl",
